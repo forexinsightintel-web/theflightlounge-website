@@ -342,3 +342,15 @@ a.brow:hover .go{opacity:1}
 .bchip{background:#fff;border:1px solid var(--line);border-radius:22px;padding:8px 17px;font-size:14.5px;font-weight:700;color:var(--muted);cursor:pointer;transition:.12s}
 .bchip:hover{color:var(--ink);border-color:var(--amber)}
 .bchip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* live-search card (untracked route → confident live handoff, not a dead end) */
+.livecard{padding:36px 28px;text-align:center}
+.lc-hd{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:10px}
+.lc-hd .lc-plane{color:var(--amber)}
+.lc-hd b{color:var(--amber)}
+.lc-sub{color:#9db4d4;font-size:15px;max-width:540px;margin:0 auto 22px;line-height:1.6}
+.lc-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.livecard .lc-big{padding:14px 22px;font-size:15px}
+.livecard .btn.ink{background:transparent;border:1.5px solid #2a3d58;color:#cdddf1}
+.livecard .btn.ink:hover{border-color:var(--amber);color:#fff;transform:translateY(-1px)}
+.lc-fine{color:#61789b;font-size:12px;margin:18px 0 0}

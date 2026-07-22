@@ -134,8 +134,19 @@
     if(!res.length){
       var live=bookingUrl({f:from, t:(to==="ANY"?"":to)});
       var dest=(to==="ANY")?"anywhere":(CITY[to]||to);
-      boardEl.innerHTML='<div class="board-empty">We\'re not tracking '+(CITY[from]||from)+' → '+dest+' on the board yet — our honest verdict needs banked price history first. You can still search it live right now:'
-        +'<div style="margin-top:14px"><a class="btn" href="'+live+'" target="_blank" rel="sponsored noopener nofollow">Search '+(CITY[from]||from)+' → '+dest+' live →</a></div></div>';
+      var fromN=(CITY[from]||from);
+      boardEl.innerHTML =
+        '<div class="livecard">'
+        +'<div class="lc-hd"><span class="lc-plane">✈</span> Live fares · <b>'+fromN+' → '+dest+'</b></div>'
+        +'<p class="lc-sub">We hand-track honest price verdicts on our core routes — and for everything else we search the whole market live. Here are real fares for this one right now:</p>'
+        +'<div class="lc-cta">'
+        +'<a class="btn lc-big" href="'+live+'" target="_blank" rel="sponsored noopener nofollow">See live flights →</a>'
+        +'<a class="btn ink lc-big" href="pricing.html">Track this route free — we’ll alert you when it drops</a>'
+        +'</div>'
+        +'<p class="lc-fine">Some links are affiliate links — if you book we may earn a commission, at no extra cost to you.</p>'
+        +'</div>';
+      // make it feel like a real search — open the live results straight away
+      try{ window.open(live, "_blank", "noopener"); }catch(e){}
     } else {
       renderBoard(res, boardEl);
     }
