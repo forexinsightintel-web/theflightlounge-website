@@ -313,6 +313,40 @@ function liveBanner(meta){
   }
 }
 
+/* ---- "we found it cheaper" routing feed (built by make_routes.py) ---- */
+async function loadRoutes(){
+  try{
+    const r = await fetch("data/routes.json", {cache:"no-store"});
+    if(!r.ok) return null;
+    return await r.json();
+  }catch(e){ return null; }
+}
+function renderRoutes(data, el){
+  if(!el) return;
+  const rep = (data && data.reposition) || [];
+  const cat = (data && data.catchment) || [];
+  if(!rep.length && !cat.length){
+    el.innerHTML = `<div class="er"><span>We're banking the fare history that powers this — real "cheaper way" routes appear here the moment two well-priced legs line up. No invented numbers in the meantime.</span></div>`;
+    return;
+  }
+  let html = "";
+  cat.slice(0,3).forEach(c=>{
+    const dl = bookingUrl({f:c.alt, t:c.dest, month:c.month});
+    html += `<a class="er er-link" href="${dl}" target="_blank" rel="sponsored noopener nofollow">
+      <span><span class="lead2">${cityName(c.home)} → ${cityName(c.dest)}</span> · fly from ${cityName(c.alt)} instead</span>
+      <span class="amt">£${c.alt_price} <small>save £${Math.round(c.saving)}</small></span></a>`;
+  });
+  rep.slice(0,4).forEach(r=>{
+    const l1 = bookingUrl({f:r.home, t:r.hub, month:r.month});
+    const l2 = bookingUrl({f:r.hub, t:r.dest, month:r.month});
+    html += `<div class="er">
+      <span><span class="lead2">${cityName(r.home)} → ${cityName(r.dest)} via ${cityName(r.hub)}</span> · direct £${r.direct}
+        <span class="flag">self-transfer — missed connection unprotected · bags recheck · check entry rules · book <a href="${l1}" target="_blank" rel="sponsored noopener nofollow">leg 1 ›</a> then <a href="${l2}" target="_blank" rel="sponsored noopener nofollow">leg 2 ›</a></span></span>
+      <span class="amt">£${r.total} <small>save £${Math.round(r.saving)}</small></span></div>`;
+  });
+  el.innerHTML = html;
+}
+
 /* ---- newsletter capture ---- */
 function wireNewsletter(){
   const f = document.getElementById("nlForm"); if(!f) return;

@@ -296,3 +296,9 @@ a.brow:hover .go{opacity:1}
 .article p{color:#39424f;font-size:16.5px;margin:0 0 16px}
 .article .callout{background:#faf6ec;border:1px solid #eadfc4;border-radius:14px;padding:18px 20px;margin:20px 0}
 .article .callout a{color:var(--amber-d);font-weight:700}
+
+/* routing "cheaper way" rows */
+.er-link{cursor:pointer;text-decoration:none;color:inherit;transition:background .12s;border-radius:8px;margin:0 -8px;padding-left:8px;padding-right:8px}
+.er-link:hover{background:rgba(221,180,87,.08)}
+.er .flag a{color:var(--amber);font-weight:700;text-decoration:underline}
+.er .flag a:hover{color:#f0c064}

@@ -58,13 +58,8 @@
 <section id="edge" style="padding-top:0">
   <div class="wrap"><div class="edge">
     <div class="kicker">The edge nobody else has</div><h3>We found it cheaper — and we prove it.</h3>
-    <p class="sub">Our engine prices every airport in your catchment and every clever two-leg route, then only tells you when it genuinely wins — with the honest catch attached.</p>
-    <div class="edge-rows">
-      <div class="er"><span><span class="lead2">Catchment</span> · you searched Liverpool → Venice</span><span class="amt">£153</span></div>
-      <div class="er"><span><span class="lead2">→ £89 from Manchester</span>, 58 minutes away</span><span class="amt">£89 <small>save £64</small></span></div>
-      <div class="er"><span><span class="lead2">Reposition</span> · Manchester → New York, direct</span><span class="amt">£346</span></div>
-      <div class="er"><span><span class="lead2">→ MAN→Dublin £31 + Dublin→JFK £198</span><span class="flag">self-transfer: missed connection unprotected · bags recheck · check ESTA</span></span><span class="amt">£229 <small>save £117</small></span></div>
-    </div>
+    <p class="sub">We price every airport in your catchment and every clever two-leg route via hubs like Dublin — then only show you the ones that genuinely win, from live fares, with the honest catch attached. These are real right now:</p>
+    <div class="edge-rows" id="edgeRows"><div class="er"><span>Loading the cheapest routes we've found…</span></div></div>
   </div></div>
 </section>
 
@@ -90,6 +85,7 @@
   }
   paint();
   loadLiveDeals().then(function(meta){ if(meta){ liveBanner(meta); paint(); } });
+  loadRoutes().then(function(r){ renderRoutes(r, document.getElementById("edgeRows")); });
 
   var fromEl=document.getElementById("from"), toEl=document.getElementById("to");
   attachAC(fromEl, document.getElementById("acFrom"));

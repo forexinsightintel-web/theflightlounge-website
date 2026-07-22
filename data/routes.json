@@ -1,0 +1,289 @@
+{
+ "generated_utc": "2026-07-22T10:02:31Z",
+ "currency": "gbp",
+ "reposition": [
+  {
+   "home": "LON",
+   "dest": "CUN",
+   "month": "2026-08",
+   "hub": "DUB",
+   "direct": 815.0,
+   "total": 646.0,
+   "saving": 169.0,
+   "leg1": 36.0,
+   "leg2": 610.0
+  },
+  {
+   "home": "LON",
+   "dest": "SYD",
+   "month": "2026-09",
+   "hub": "DUB",
+   "direct": 748.0,
+   "total": 637.0,
+   "saving": 111.0,
+   "leg1": 36.0,
+   "leg2": 601.0
+  },
+  {
+   "home": "LON",
+   "dest": "JNB",
+   "month": "2026-08",
+   "hub": "DUB",
+   "direct": 712.0,
+   "total": 614.0,
+   "saving": 98.0,
+   "leg1": 36.0,
+   "leg2": 578.0
+  },
+  {
+   "home": "LON",
+   "dest": "NYC",
+   "month": "2026-08",
+   "hub": "DUB",
+   "direct": 438.0,
+   "total": 368.0,
+   "saving": 70.0,
+   "leg1": 36.0,
+   "leg2": 332.0
+  },
+  {
+   "home": "LON",
+   "dest": "DBV",
+   "month": "2026-08",
+   "hub": "DUB",
+   "direct": 198.0,
+   "total": 135.0,
+   "saving": 63.0,
+   "leg1": 36.0,
+   "leg2": 99.0
+  },
+  {
+   "home": "LON",
+   "dest": "JFK",
+   "month": "2026-08",
+   "hub": "DUB",
+   "direct": 438.0,
+   "total": 379.0,
+   "saving": 59.0,
+   "leg1": 36.0,
+   "leg2": 343.0
+  },
+  {
+   "home": "LON",
+   "dest": "DPS",
+   "month": "2026-09",
+   "hub": "DUB",
+   "direct": 625.0,
+   "total": 577.0,
+   "saving": 48.0,
+   "leg1": 36.0,
+   "leg2": 541.0
+  },
+  {
+   "home": "LON",
+   "dest": "NYC",
+   "month": "2026-09",
+   "hub": "DUB",
+   "direct": 386.5,
+   "total": 338.5,
+   "saving": 48.0,
+   "leg1": 36.0,
+   "leg2": 302.5
+  },
+  {
+   "home": "LON",
+   "dest": "KEF",
+   "month": "2026-09",
+   "hub": "DUB",
+   "direct": null,
+   "total": 223.0,
+   "saving": null,
+   "leg1": 36.0,
+   "leg2": 187.0
+  },
+  {
+   "home": "LON",
+   "dest": "ORK",
+   "month": "2026-07",
+   "hub": "DUB",
+   "direct": null,
+   "total": 201.0,
+   "saving": null,
+   "leg1": 97.0,
+   "leg2": 104.0
+  },
+  {
+   "home": "LON",
+   "dest": "DBV",
+   "month": "2026-07",
+   "hub": "DUB",
+   "direct": null,
+   "total": 281.0,
+   "saving": null,
+   "leg1": 97.0,
+   "leg2": 184.0
+  },
+  {
+   "home": "MAN",
+   "dest": "ALC",
+   "month": "2026-07",
+   "hub": "DUB",
+   "direct": null,
+   "total": 198.0,
+   "saving": null,
+   "leg1": 89.0,
+   "leg2": 109.0
+  },
+  {
+   "home": "MAN",
+   "dest": "ATH",
+   "month": "2026-07",
+   "hub": "DUB",
+   "direct": null,
+   "total": 289.0,
+   "saving": null,
+   "leg1": 89.0,
+   "leg2": 200.0
+  },
+  {
+   "home": "MAN",
+   "dest": "BJV",
+   "month": "2026-07",
+   "hub": "DUB",
+   "direct": null,
+   "total": 405.0,
+   "saving": null,
+   "leg1": 89.0,
+   "leg2": 316.0
+  }
+ ],
+ "catchment": [
+  {
+   "home": "LPL",
+   "dest": "LCA",
+   "month": "2026-08",
+   "alt": "MAN",
+   "home_price": 327.5,
+   "alt_price": 189.0,
+   "saving": 138.5
+  },
+  {
+   "home": "LPL",
+   "dest": "IST",
+   "month": "2026-09",
+   "alt": "MAN",
+   "home_price": 300.0,
+   "alt_price": 164.0,
+   "saving": 136.0
+  },
+  {
+   "home": "GLA",
+   "dest": "PAR",
+   "month": "2026-08",
+   "alt": "EDI",
+   "home_price": 187.0,
+   "alt_price": 90.0,
+   "saving": 97.0
+  },
+  {
+   "home": "LPL",
+   "dest": "DXB",
+   "month": "2026-07",
+   "alt": "MAN",
+   "home_price": 516.0,
+   "alt_price": 420.5,
+   "saving": 95.5
+  },
+  {
+   "home": "MAN",
+   "dest": "AMS",
+   "month": "2026-07",
+   "alt": "LPL",
+   "home_price": 227.0,
+   "alt_price": 153.0,
+   "saving": 74.0
+  },
+  {
+   "home": "LPL",
+   "dest": "LIS",
+   "month": "2026-07",
+   "alt": "MAN",
+   "home_price": 259.0,
+   "alt_price": 192.0,
+   "saving": 67.0
+  },
+  {
+   "home": "MAN",
+   "dest": "HKG",
+   "month": "2026-07",
+   "alt": "LPL",
+   "home_price": 791.0,
+   "alt_price": 744.0,
+   "saving": 47.0
+  },
+  {
+   "home": "GLA",
+   "dest": "PFO",
+   "month": "2026-08",
+   "alt": "EDI",
+   "home_price": 360.0,
+   "alt_price": 317.0,
+   "saving": 43.0
+  },
+  {
+   "home": "EDI",
+   "dest": "IST",
+   "month": "2026-07",
+   "alt": "GLA",
+   "home_price": 253.0,
+   "alt_price": 216.0,
+   "saving": 37.0
+  },
+  {
+   "home": "GLA",
+   "dest": "LCA",
+   "month": "2026-08",
+   "alt": "EDI",
+   "home_price": 294.0,
+   "alt_price": 259.0,
+   "saving": 35.0
+  },
+  {
+   "home": "GLA",
+   "dest": "GOI",
+   "month": "2026-09",
+   "alt": "EDI",
+   "home_price": 494.0,
+   "alt_price": 462.0,
+   "saving": 32.0
+  },
+  {
+   "home": "LPL",
+   "dest": "PMI",
+   "month": "2026-07",
+   "alt": "MAN",
+   "home_price": 85.0,
+   "alt_price": 56.0,
+   "saving": 29.0
+  },
+  {
+   "home": "LPL",
+   "dest": "PAR",
+   "month": "2026-07",
+   "alt": "MAN",
+   "home_price": 137.0,
+   "alt_price": 112.0,
+   "saving": 25.0
+  },
+  {
+   "home": "GLA",
+   "dest": "TFS",
+   "month": "2026-08",
+   "alt": "EDI",
+   "home_price": 182.0,
+   "alt_price": 163.0,
+   "saving": 19.0
+  }
+ ],
+ "count": 28
+}
