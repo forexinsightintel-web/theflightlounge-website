@@ -1,10 +1,100 @@
 {
- "generated_utc": "2026-07-22T16:08:24Z",
+ "generated_utc": "2026-07-22T21:54:11Z",
  "currency": "gbp",
  "history_building": true,
  "collection_days": 3,
  "days_until_verdicts": 11,
  "deals": [
+  {
+   "f": "MIL",
+   "t": "WAW",
+   "al": "W6",
+   "price": 22,
+   "median": 25,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 22,
+   "high": 27,
+   "hist": [
+    22
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "NAP",
+   "al": "W4",
+   "price": 23,
+   "median": 23,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 0,
+   "low": 23,
+   "high": 23,
+   "hist": [
+    23
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "KRK",
+   "al": "W6",
+   "price": 26,
+   "median": 26,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 0,
+   "low": 26,
+   "high": 26,
+   "hist": [
+    26
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "PMI",
+   "al": "W4",
+   "price": 27,
+   "median": 27,
+   "win": "Jul 2026",
+   "month": "2026-07",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 0,
+   "low": 27,
+   "high": 27,
+   "hist": [
+    27
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "CTA",
+   "al": "W4",
+   "price": 27,
+   "median": 27,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 0,
+   "low": 27,
+   "high": 27,
+   "hist": [
+    27
+   ]
+  },
   {
    "f": "LON",
    "t": "ALC",
@@ -16,7 +106,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21,
+   "n": 27,
    "low": 29,
    "high": 37,
    "hist": [
@@ -26,17 +116,35 @@
    ]
   },
   {
+   "f": "MIL",
+   "t": "PMO",
+   "al": "W4",
+   "price": 29,
+   "median": 29,
+   "win": "Aug 2026",
+   "month": "2026-08",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 0,
+   "low": 29,
+   "high": 29,
+   "hist": [
+    29
+   ]
+  },
+  {
    "f": "LON",
    "t": "BCN",
    "al": "U2",
    "price": 30,
-   "median": 33,
+   "median": 31,
    "win": "Sep 2026",
    "month": "2026-09",
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 19,
+   "n": 25,
    "low": 30,
    "high": 34,
    "hist": [
@@ -56,13 +164,31 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21,
+   "n": 27,
    "low": 30,
    "high": 41,
    "hist": [
     33,
     30,
     36
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "BCN",
+   "al": "VY",
+   "price": 31,
+   "median": 31,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 31,
+   "high": 31,
+   "hist": [
+    31
    ]
   },
   {
@@ -76,12 +202,66 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21,
+   "n": 27,
    "low": 32,
    "high": 36,
    "hist": [
     32,
     32,
+    32
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "IBZ",
+   "al": "U2",
+   "price": 32,
+   "median": 38,
+   "win": "Aug 2026",
+   "month": "2026-08",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 32,
+   "high": 44,
+   "hist": [
+    32
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "VIE",
+   "al": "FR",
+   "price": 32,
+   "median": 36,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 32,
+   "high": 46,
+   "hist": [
+    32
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "BUD",
+   "al": "W4",
+   "price": 32,
+   "median": 32,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 32,
+   "high": 35,
+   "hist": [
     32
    ]
   },
@@ -96,7 +276,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21,
+   "n": 27,
    "low": 33,
    "high": 49,
    "hist": [
@@ -116,13 +296,33 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 7,
+   "n": 9,
    "low": 33,
    "high": 33,
    "hist": [
     33,
     33,
     33
+   ]
+  },
+  {
+   "f": "LON",
+   "t": "DUB",
+   "al": "FR",
+   "price": 34,
+   "median": 36,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 12,
+   "low": 34,
+   "high": 42,
+   "hist": [
+    35,
+    35,
+    34
    ]
   },
   {
@@ -136,7 +336,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 16,
+   "n": 20,
    "low": 34,
    "high": 59,
    "hist": [
@@ -156,7 +356,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 7,
+   "n": 9,
    "low": 34,
    "high": 36,
    "hist": [
@@ -176,9 +376,9 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 0,
+   "n": 4,
    "low": 34,
-   "high": 64,
+   "high": 106,
    "hist": [
     64,
     64,
@@ -186,22 +386,38 @@
    ]
   },
   {
-   "f": "LON",
-   "t": "DUB",
-   "al": "FR",
+   "f": "MIL",
+   "t": "AGP",
+   "al": "U2",
    "price": 35,
-   "median": 36,
-   "win": "Aug 2026",
-   "month": "2026-08",
+   "median": 35,
+   "win": "Sep 2026",
+   "month": "2026-09",
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21,
+   "n": 3,
    "low": 35,
-   "high": 36,
+   "high": 38,
    "hist": [
-    35,
-    35,
+    35
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "ALC",
+   "al": "W4",
+   "price": 35,
+   "median": 36,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 35,
+   "high": 39,
+   "hist": [
     35
    ]
   },
@@ -216,13 +432,31 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 16,
+   "n": 18,
    "low": 36,
    "high": 42,
    "hist": [
     36,
     36,
     41
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "DBV",
+   "al": "FR",
+   "price": 36,
+   "median": 75,
+   "win": "Aug 2026",
+   "month": "2026-08",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 36,
+   "high": 77,
+   "hist": [
+    36
    ]
   },
   {
@@ -236,7 +470,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21,
+   "n": 27,
    "low": 37,
    "high": 63,
    "hist": [
@@ -256,13 +490,49 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 15,
+   "n": 21,
    "low": 37,
    "high": 37,
    "hist": [
     37,
     37,
     37
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "PAR",
+   "al": "MW",
+   "price": 37,
+   "median": 37,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 37,
+   "high": 38,
+   "hist": [
+    37
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "RAK",
+   "al": "W4",
+   "price": 38,
+   "median": 82,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 38,
+   "high": 84,
+   "hist": [
+    38
    ]
   },
   {
@@ -276,7 +546,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 16,
+   "n": 22,
    "low": 39,
    "high": 80,
    "hist": [
@@ -290,13 +560,13 @@
    "t": "FCO",
    "al": "W4",
    "price": 39,
-   "median": 52,
+   "median": 50,
    "win": "Sep 2026",
    "month": "2026-09",
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21,
+   "n": 27,
    "low": 39,
    "high": 54,
    "hist": [
@@ -316,13 +586,123 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21,
+   "n": 27,
    "low": 39,
    "high": 102,
    "hist": [
     39,
     39,
     41
+   ]
+  },
+  {
+   "f": "OSL",
+   "t": "DBV",
+   "al": "FR",
+   "price": 39,
+   "median": 39,
+   "win": "Aug 2026",
+   "month": "2026-08",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 0,
+   "low": 39,
+   "high": 39,
+   "hist": [
+    39
+   ]
+  },
+  {
+   "f": "LON",
+   "t": "ARN",
+   "al": "FR",
+   "price": 40,
+   "median": 67,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 10,
+   "low": 40,
+   "high": 67,
+   "hist": [
+    67,
+    66,
+    40
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "MAD",
+   "al": "W4",
+   "price": 40,
+   "median": 41,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 40,
+   "high": 43,
+   "hist": [
+    40
+   ]
+  },
+  {
+   "f": "IST",
+   "t": "BJV",
+   "al": "VF",
+   "price": 43,
+   "median": 43,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 0,
+   "low": 43,
+   "high": 43,
+   "hist": [
+    43
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "PRG",
+   "al": "U2",
+   "price": 43,
+   "median": 44,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 43,
+   "high": 47,
+   "hist": [
+    43
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "OPO",
+   "al": "FR",
+   "price": 44,
+   "median": 50,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 44,
+   "high": 62,
+   "hist": [
+    44
    ]
   },
   {
@@ -336,13 +716,105 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21,
+   "n": 27,
    "low": 47,
    "high": 98,
    "hist": [
     47,
     47,
     47
+   ]
+  },
+  {
+   "f": "DUB",
+   "t": "BER",
+   "al": "MW",
+   "price": 47,
+   "median": 49,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 6,
+   "low": 47,
+   "high": 49,
+   "hist": [
+    49,
+    49,
+    47
+   ]
+  },
+  {
+   "f": "IST",
+   "t": "DLM",
+   "al": "VF",
+   "price": 47,
+   "median": 50,
+   "win": "Jul 2026",
+   "month": "2026-07",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 47,
+   "high": 51,
+   "hist": [
+    47
+   ]
+  },
+  {
+   "f": "AMS",
+   "t": "DUB",
+   "al": "FR",
+   "price": 48,
+   "median": 51,
+   "win": "Aug 2026",
+   "month": "2026-08",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 48,
+   "high": 55,
+   "hist": [
+    48
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "LIS",
+   "al": "FR",
+   "price": 48,
+   "median": 51,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 48,
+   "high": 54,
+   "hist": [
+    48
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "CPH",
+   "al": "MW",
+   "price": 48,
+   "median": 48,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 0,
+   "low": 48,
+   "high": 48,
+   "hist": [
+    48
    ]
   },
   {
@@ -356,7 +828,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 19,
+   "n": 25,
    "low": 49,
    "high": 154,
    "hist": [
@@ -376,7 +848,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 16,
+   "n": 21,
    "low": 49,
    "high": 88,
    "hist": [
@@ -396,27 +868,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 7,
-   "low": 49,
-   "high": 49,
-   "hist": [
-    49,
-    49,
-    49
-   ]
-  },
-  {
-   "f": "DUB",
-   "t": "BER",
-   "al": "FR",
-   "price": 49,
-   "median": 49,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 5,
+   "n": 9,
    "low": 49,
    "high": 49,
    "hist": [
@@ -436,13 +888,103 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21,
+   "n": 27,
    "low": 51,
    "high": 92,
    "hist": [
     51,
     51,
     51
+   ]
+  },
+  {
+   "f": "GLA",
+   "t": "PMI",
+   "al": "U2",
+   "price": 51,
+   "median": 51,
+   "win": "Aug 2026",
+   "month": "2026-08",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 0,
+   "low": 51,
+   "high": 51,
+   "hist": [
+    51
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "OSL",
+   "al": "MW",
+   "price": 51,
+   "median": 59,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 51,
+   "high": 77,
+   "hist": [
+    51
+   ]
+  },
+  {
+   "f": "OSL",
+   "t": "MIL",
+   "al": "FR",
+   "price": 51,
+   "median": 81,
+   "win": "Aug 2026",
+   "month": "2026-08",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 51,
+   "high": 99,
+   "hist": [
+    51
+   ]
+  },
+  {
+   "f": "MIL",
+   "t": "FCO",
+   "al": "W4",
+   "price": 52,
+   "median": 54,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": false,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 52,
+   "high": 59,
+   "hist": [
+    52
+   ]
+  },
+  {
+   "f": "OSL",
+   "t": "ALC",
+   "al": "FR",
+   "price": 52,
+   "median": 52,
+   "win": "Aug 2026",
+   "month": "2026-08",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 3,
+   "low": 52,
+   "high": 53,
+   "hist": [
+    52
    ]
   },
   {
@@ -456,7 +998,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 19,
+   "n": 25,
    "low": 53,
    "high": 68,
    "hist": [
@@ -476,7 +1018,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21,
+   "n": 27,
    "low": 53,
    "high": 89,
    "hist": [
@@ -496,9 +1038,9 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21,
+   "n": 27,
    "low": 53,
-   "high": 85,
+   "high": 98,
    "hist": [
     53,
     53,
@@ -516,7 +1058,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 19,
+   "n": 25,
    "low": 53,
    "high": 63,
    "hist": [
@@ -527,16 +1069,36 @@
   },
   {
    "f": "LON",
-   "t": "WAW",
-   "al": "W6",
+   "t": "PAR",
+   "al": "VY",
    "price": 54,
-   "median": 60,
+   "median": 66,
    "win": "Sep 2026",
    "month": "2026-09",
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21,
+   "n": 27,
+   "low": 54,
+   "high": 67,
+   "hist": [
+    62,
+    62,
+    54
+   ]
+  },
+  {
+   "f": "LON",
+   "t": "WAW",
+   "al": "W6",
+   "price": 54,
+   "median": 63,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 27,
    "low": 54,
    "high": 65,
    "hist": [
@@ -556,7 +1118,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 11,
+   "n": 14,
    "low": 54,
    "high": 57,
    "hist": [
@@ -570,634 +1132,19 @@
    "t": "AMS",
    "al": "FR",
    "price": 54,
-   "median": 88,
-   "win": "Aug 2026",
-   "month": "2026-08",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 13,
-   "low": 54,
-   "high": 111,
-   "hist": [
-    54,
-    57,
-    57
-   ]
-  },
-  {
-   "f": "MAN",
-   "t": "MAD",
-   "al": "FR",
-   "price": 55,
-   "median": 55,
-   "win": "Aug 2026",
-   "month": "2026-08",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 0,
-   "low": 55,
-   "high": 55,
-   "hist": [
-    55
-   ]
-  },
-  {
-   "f": "LON",
-   "t": "OPO",
-   "al": "FR",
-   "price": 56,
-   "median": 62,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 16,
-   "low": 56,
-   "high": 71,
-   "hist": [
-    56,
-    62,
-    62
-   ]
-  },
-  {
-   "f": "MAN",
-   "t": "PMI",
-   "al": "FR",
-   "price": 56,
-   "median": 56,
-   "win": "Jul 2026",
-   "month": "2026-07",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 9,
-   "low": 56,
-   "high": 72,
-   "hist": [
-    56,
-    56,
-    56
-   ]
-  },
-  {
-   "f": "NCL",
-   "t": "PMI",
-   "al": "U2",
-   "price": 57,
-   "median": 57,
-   "win": "Aug 2026",
-   "month": "2026-08",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 0,
-   "low": 57,
-   "high": 104,
-   "hist": [
-    104,
-    57
-   ]
-  },
-  {
-   "f": "LON",
-   "t": "NAP",
-   "al": "FR",
-   "price": 58,
-   "median": 62,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 21,
-   "low": 58,
-   "high": 108,
-   "hist": [
-    61,
-    58,
-    58
-   ]
-  },
-  {
-   "f": "LON",
-   "t": "VCE",
-   "al": "W4",
-   "price": 58,
-   "median": 77,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 12,
-   "low": 58,
-   "high": 77,
-   "hist": [
-    58,
-    58,
-    61
-   ]
-  },
-  {
-   "f": "MAN",
-   "t": "BCN",
-   "al": "FR",
-   "price": 58,
-   "median": 81,
-   "win": "Aug 2026",
-   "month": "2026-08",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 21,
-   "low": 58,
-   "high": 82,
-   "hist": [
-    58,
-    58,
-    58
-   ]
-  },
-  {
-   "f": "DUB",
-   "t": "CPH",
-   "al": "FR",
-   "price": 58,
-   "median": 58,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 0,
-   "low": 58,
-   "high": 72,
-   "hist": [
-    58,
-    72,
-    72
-   ]
-  },
-  {
-   "f": "BHX",
-   "t": "ALC",
-   "al": "FR",
-   "price": 59,
-   "median": 59,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 7,
-   "low": 59,
-   "high": 59,
-   "hist": [
-    59,
-    59,
-    59
-   ]
-  },
-  {
-   "f": "BRS",
-   "t": "ALC",
-   "al": "U2",
-   "price": 59,
-   "median": 72,
-   "win": "Jul 2026",
-   "month": "2026-07",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 4,
-   "low": 59,
-   "high": 84,
-   "hist": [
-    59,
-    74
-   ]
-  },
-  {
-   "f": "DUB",
-   "t": "FAO",
-   "al": "FR",
-   "price": 59,
-   "median": 92,
-   "win": "Aug 2026",
-   "month": "2026-08",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 15,
-   "low": 59,
-   "high": 96,
-   "hist": [
-    59,
-    70,
-    70
-   ]
-  },
-  {
-   "f": "DUB",
-   "t": "PMI",
-   "al": "FR",
-   "price": 59,
-   "median": 77,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 15,
-   "low": 59,
-   "high": 85,
-   "hist": [
-    59,
-    59,
-    59
-   ]
-  },
-  {
-   "f": "BHX",
-   "t": "BCN",
-   "al": "VY",
-   "price": 60,
-   "median": 60,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 0,
-   "low": 60,
-   "high": 69,
-   "hist": [
-    69,
-    60,
-    60
-   ]
-  },
-  {
-   "f": "BRS",
-   "t": "PMI",
-   "al": "U2",
-   "price": 60,
-   "median": 60,
-   "win": "Jul 2026",
-   "month": "2026-07",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 4,
-   "low": 60,
-   "high": 60,
-   "hist": [
-    60,
-    60
-   ]
-  },
-  {
-   "f": "MAN",
-   "t": "MIL",
-   "al": "FR",
-   "price": 61,
-   "median": 82,
-   "win": "Aug 2026",
-   "month": "2026-08",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 17,
-   "low": 61,
-   "high": 90,
-   "hist": [
-    76,
-    61,
-    61
-   ]
-  },
-  {
-   "f": "LON",
-   "t": "PAR",
-   "al": "U2",
-   "price": 62,
-   "median": 66,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 21,
-   "low": 62,
-   "high": 67,
-   "hist": [
-    62,
-    62,
-    62
-   ]
-  },
-  {
-   "f": "MAN",
-   "t": "AGP",
-   "al": "U2",
-   "price": 62,
-   "median": 62,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 13,
-   "low": 62,
-   "high": 79,
-   "hist": [
-    62,
-    62,
-    62
-   ]
-  },
-  {
-   "f": "DUB",
-   "t": "MIL",
-   "al": "FR",
-   "price": 62,
-   "median": 66,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 15,
-   "low": 62,
-   "high": 104,
-   "hist": [
-    62,
-    62,
-    62
-   ]
-  },
-  {
-   "f": "LON",
-   "t": "RAK",
-   "al": "RK",
-   "price": 63,
    "median": 109,
    "win": "Aug 2026",
    "month": "2026-08",
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21,
-   "low": 63,
-   "high": 114,
+   "n": 19,
+   "low": 54,
+   "high": 111,
    "hist": [
-    63,
-    63,
-    63
-   ]
-  },
-  {
-   "f": "LON",
-   "t": "SPU",
-   "al": "W9",
-   "price": 65,
-   "median": 66,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 21,
-   "low": 65,
-   "high": 100,
-   "hist": [
-    65,
-    65,
-    65
-   ]
-  },
-  {
-   "f": "LON",
-   "t": "ARN",
-   "al": "W6",
-   "price": 66,
-   "median": 67,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": false,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 7,
-   "low": 66,
-   "high": 67,
-   "hist": [
-    67,
-    66,
-    67
-   ]
-  },
-  {
-   "f": "LON",
-   "t": "PRG",
-   "al": "W9",
-   "price": 68,
-   "median": 86,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 21,
-   "low": 68,
-   "high": 96,
-   "hist": [
-    68,
-    68,
-    68
-   ]
-  },
-  {
-   "f": "EDI",
-   "t": "CPH",
-   "al": "FR",
-   "price": 68,
-   "median": 68,
-   "win": "Aug 2026",
-   "month": "2026-08",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 7,
-   "low": 68,
-   "high": 68,
-   "hist": [
-    68,
-    68,
-    68
-   ]
-  },
-  {
-   "f": "LON",
-   "t": "GVA",
-   "al": "U2",
-   "price": 71,
-   "median": 73,
-   "win": "Aug 2026",
-   "month": "2026-08",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 21,
-   "low": 71,
-   "high": 84,
-   "hist": [
-    71,
-    71,
-    71
-   ]
-  },
-  {
-   "f": "LON",
-   "t": "AMS",
-   "al": "U2",
-   "price": 73,
-   "median": 80,
-   "win": "Aug 2026",
-   "month": "2026-08",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 21,
-   "low": 73,
-   "high": 97,
-   "hist": [
-    73,
-    73,
-    73
-   ]
-  },
-  {
-   "f": "LON",
-   "t": "DBV",
-   "al": "FR",
-   "price": 73,
-   "median": 81,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 16,
-   "low": 73,
-   "high": 98,
-   "hist": [
-    81,
-    73,
-    73
-   ]
-  },
-  {
-   "f": "MAN",
-   "t": "BUD",
-   "al": "FR",
-   "price": 74,
-   "median": 74,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 13,
-   "low": 74,
-   "high": 85,
-   "hist": [
-    74,
-    74,
-    74
-   ]
-  },
-  {
-   "f": "EDI",
-   "t": "PAR",
-   "al": "FR",
-   "price": 75,
-   "median": 94,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": false,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 4,
-   "low": 75,
-   "high": 112,
-   "hist": [
-    75,
-    90,
-    90
-   ]
-  },
-  {
-   "f": "DUB",
-   "t": "PRG",
-   "al": "FR",
-   "price": 75,
-   "median": 90,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 12,
-   "low": 75,
-   "high": 92,
-   "hist": [
-    75,
-    75,
-    75
-   ]
-  },
-  {
-   "f": "LON",
-   "t": "PMO",
-   "al": "W4",
-   "price": 76,
-   "median": 76,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": false,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 0,
-   "low": 76,
-   "high": 122,
-   "hist": [
-    76,
-    122,
-    122
-   ]
-  },
-  {
-   "f": "DUB",
-   "t": "ALC",
-   "al": "FR",
-   "price": 76,
-   "median": 84,
-   "win": "Sep 2026",
-   "month": "2026-09",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 13,
-   "low": 76,
-   "high": 108,
-   "hist": [
-    76,
-    76,
-    76
+    54,
+    57,
+    57
    ]
   }
  ]
