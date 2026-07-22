@@ -395,6 +395,74 @@ function renderRoutes(data, el){
   el.innerHTML = html;
 }
 
+/* ============================================================
+   LIVE FLIGHT RESULTS — our own board, our verdict, powered by /api/search
+   (Amadeus server-side). Only the "Book" click hands off. This is what makes
+   TFL a real search, not a forwarder.
+   ============================================================ */
+function _hm(iso){ const m=String(iso||"").match(/T(\d{2}:\d{2})/); return m?m[1]:""; }
+function _dur(iso){
+  const m=String(iso||"").match(/PT(?:(\d+)H)?(?:(\d+)M)?/); if(!m) return "";
+  return ((m[1]?m[1]+"h ":"")+(m[2]?m[2]+"m":"")).trim();
+}
+function _niceDate(d){
+  try{ return new Date(d+"T00:00:00").toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"}); }
+  catch(e){ return d; }
+}
+function routeMeta(from,to){
+  const d = DEALS.find(x=>x.f===from && x.t===to);
+  return d ? {median:d.median, low:d.low, high:d.high} : null;
+}
+function liveBookUrl(from,to,date){
+  const o=(from||"").toLowerCase(), t=(to||"").toLowerCase();
+  const ymd = (date&&/^\d{4}-\d{2}-\d{2}$/.test(date)) ? date.slice(2,4)+date.slice(5,7)+date.slice(8,10) : "";
+  let u="https://www.skyscanner.net/transport/flights/"+o+"/"+t+"/";
+  if(ymd) u+=ymd+"/";
+  return u+"?adults="+(SEARCH.adults||1)+"&cabinclass="+(SEARCH.tripClass?"business":"economy")+"&rtn=0&currency=GBP&market=UK&locale=en-GB";
+}
+async function liveSearch(origin,destination,date,adults,direct){
+  try{
+    const p=new URLSearchParams({origin:origin,destination:destination,date:date,adults:String(adults||1)});
+    if(direct) p.set("direct","1");
+    const r=await fetch("/api/search?"+p.toString());
+    if(!r.ok) return null;
+    return await r.json();
+  }catch(e){ return null; }
+}
+function renderResults(data, el, from, to, date){
+  const rs=(data&&data.results)||[];
+  if(!rs.length) return false;
+  const meta=routeMeta(from,to);
+  const book=liveBookUrl(from,to,date);
+  const head='<div class="lr-hd"><span class="lr-plane">✈</span> <b>'+rs.length+' live flights</b> · '
+    +cityName(from)+' → '+cityName(to)+' · '+_niceDate(date)+'</div>';
+  const ctxLine = meta
+    ? '<div class="lr-ctx">Our price history says this route is usually <b>£'+meta.median+'</b> (we\'ve seen £'+meta.low+'–£'+meta.high+') — so here\'s our honest read on each fare:</div>'
+    : '<div class="lr-ctx">We don\'t verdict-track this exact route yet — but these are real live fares, cheapest first. Book direct with the airline or agent.</div>';
+  const rows = rs.map(function(f){
+    const dep=_hm(f.depart), arr=_hm(f.arrive), dur=_dur(f.duration);
+    const stops=f.stops===0?"Direct":(f.stops+" stop"+(f.stops>1?"s":""));
+    var vd="";
+    if(meta && meta.median){
+      const off=Math.round((1-f.price/meta.median)*100);
+      if(off>=40) vd='<span class="vd g">STEAL ▼'+off+'%</span>';
+      else if(off>=22) vd='<span class="vd g">GREAT ▼'+off+'%</span>';
+      else if(off>=8) vd='<span class="vd a">GOOD ▼'+off+'%</span>';
+      else if(off<=-8) vd='<span class="vd r">PRICEY ▲'+Math.abs(off)+'%</span>';
+      else vd='<span class="vd t">TYPICAL</span>';
+    }
+    return '<a class="lrow" href="'+book+'" target="_blank" rel="sponsored noopener nofollow">'
+      +'<div class="lr-air">'+logoImg(f.airline)+'<span class="lr-airtxt"><b>'+(airlineName(f.airline)||f.airlineName)+'</b><small>'+stops+' · '+dur+'</small></span></div>'
+      +'<div class="lr-time">'+dep+'<span class="lr-arw">→</span>'+arr+'</div>'
+      +'<div class="lr-price"><span class="lr-pr">£'+f.price+'</span>'+vd+'</div>'
+      +'<div class="lr-book">Book ›</div>'
+      +'</a>';
+  }).join("");
+  el.innerHTML = head + ctxLine + '<div class="lrows">'+rows+'</div>'
+    +'<p class="afx" style="padding:14px 2px 0">Live fares via Amadeus. The Book button hands off to finish your booking — some links are affiliate links, at no extra cost to you. <a href="affiliate-disclosure.html">How this works</a>.</p>';
+  return true;
+}
+
 /* ---- newsletter capture ---- */
 function wireNewsletter(){
   const f = document.getElementById("nlForm"); if(!f) return;

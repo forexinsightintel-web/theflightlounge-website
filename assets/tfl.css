@@ -354,3 +354,29 @@ a.brow:hover .go{opacity:1}
 .livecard .btn.ink{background:transparent;border:1.5px solid #2a3d58;color:#cdddf1}
 .livecard .btn.ink:hover{border-color:var(--amber);color:#fff;transform:translateY(-1px)}
 .lc-fine{color:#61789b;font-size:12px;margin:18px 0 0}
+
+/* live flight results (our own board via /api/search) */
+.lr-hd{padding:18px 22px 4px;color:#fff;font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700}
+.lr-hd .lr-plane{color:var(--amber)}
+.lr-ctx{padding:4px 22px 15px;color:#9db4d4;font-size:13.5px;line-height:1.5;border-bottom:1px solid #182842}
+.lr-ctx b{color:var(--amber)}
+.lrow{display:grid;grid-template-columns:1.5fr .9fr 1fr auto;gap:16px;align-items:center;padding:14px 22px;border-bottom:1px solid #121e30;color:inherit;text-decoration:none;transition:background .12s;cursor:pointer}
+.lrow:last-child{border-bottom:none}
+.lrow:hover{background:#0e1a2a}
+.lr-air{display:flex;align-items:center;gap:11px;min-width:0}
+.lr-airtxt{display:flex;flex-direction:column;min-width:0}
+.lr-airtxt b{color:#c2d4ef;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lr-airtxt small{color:#7f96b6;font-size:12.5px}
+.lr-time{font-family:'JetBrains Mono',monospace;font-weight:800;font-size:15px;color:#eaf1fb;white-space:nowrap}
+.lr-time .lr-arw{color:#5a7398;margin:0 6px}
+.lr-price{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.lr-price .lr-pr{font-family:'JetBrains Mono',monospace;font-weight:800;font-size:19px;color:#fff}
+.lr-book{background:var(--amber);color:#241900;font-weight:800;font-size:13px;padding:9px 16px;border-radius:9px;white-space:nowrap;justify-self:end;transition:background .12s}
+.lrow:hover .lr-book{background:#fff}
+.vd.r{background:rgba(225,88,95,.16);color:#f0908f;border:1px solid rgba(225,88,95,.4)}
+@media(max-width:760px){
+  .lrow{grid-template-columns:1fr auto;gap:6px 12px;padding:14px 16px}
+  .lr-time{grid-column:1;font-size:14px}
+  .lr-price{grid-column:2;justify-self:end}
+  .lr-book{grid-column:1/-1;justify-self:stretch;text-align:center;margin-top:4px}
+}
