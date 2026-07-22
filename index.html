@@ -14,8 +14,9 @@
 
 <section class="hero">
   <div class="heroimg"></div>
-  <div class="wrap">
-    <p class="lead">✦ Live board · updating now</p>
+  <div class="wrap herogrid">
+  <div class="hero-left">
+    <p class="lead">✦ Real fares · tracked &amp; refreshed daily</p>
     <h1 class="disp">Cheap flights, <span class="am">now boarding.</span></h1>
     <div class="tabs"><span class="tab on">✈ Flights</span><span class="tab">◎ Everywhere</span><span class="tab">☆ Watch a route</span></div>
     <div class="chips"><span class="chip">Return ⌄</span><span class="chip" id="chipPax">1 traveller ⌄</span><span class="chip" id="chipCls">Economy ⌄</span></div>
@@ -30,6 +31,8 @@
     <div class="schecks"><span class="chk" id="chkDirect"><span class="box"></span> Direct flights only</span><span class="chk on" id="chkNearby"><span class="box"></span> Include nearby airports</span></div>
     <button class="searchbtn" id="searchBtn">Show me the deals</button>
   </div>
+  <aside class="hero-right"><div class="heroshow" id="heroShow"></div></aside>
+  </div>
 </section>
 
 <div class="boardsec" id="board"><div class="wrap">
@@ -37,7 +40,7 @@
   <div class="bhd"><h2 class="disp" id="boardTitle">Cheapest fares on the board</h2><a href="deals.html" class="see">See all →</a></div>
   <div class="budget" id="budget"><span class="blbl">Show me anywhere under:</span><span class="bchip on" data-b="0">Any price</span><span class="bchip" data-b="40">£40</span><span class="bchip" data-b="60">£60</span><span class="bchip" data-b="100">£100</span></div>
   <div class="board" id="boardEl"></div>
-  <p class="afx">Tap any fare to search it live. Some links are affiliate links — if you book we may earn a commission, at no extra cost to you. <a href="affiliate-disclosure.html">How this works</a>.</p>
+  <p class="afx">Board prices are the lowest we have tracked — indicative, not a live quote. Tap any fare to check the live price now; the airline confirms the final fare at checkout. Some links are affiliate links — if you book we may earn a commission, at no extra cost to you. <a href="affiliate-disclosure.html">How this works</a>.</p>
 </div></div>
 
 <div class="trust"><div class="wrap trust-in">
@@ -52,7 +55,7 @@
     <div class="txt"><div class="icon">✓</div><h3>Not sure it's<br>actually cheap?</h3>
       <p>Every fare on the board will carry our verdict — GOOD PRICE, TYPICAL or WAIT — backed by real fare history. We do the working, you just book.</p>
       <a href="how-it-works.html" class="btn">See how verdicts work</a></div>
-    <div class="pic"><div class="verdict-demo"><div class="vv">● GOOD PRICE — book now</div><div class="pl">£38</div><div class="pn">lowest in 90 days · normally £120</div></div></div>
+    <div class="pic"><div class="verdict-demo"><div class="vv">● Example verdict</div><div class="pl">£38</div><div class="pn">illustration only — your board shows the real number, checked live</div></div></div>
   </div></div>
 </section>
 
@@ -96,8 +99,19 @@
     this.querySelectorAll(".bchip").forEach(function(x){x.classList.remove("on");});
     c.classList.add("on"); budgetMax=+c.dataset.b; paint();
   };
-  paint();
-  loadLiveDeals().then(function(meta){ if(meta){ liveBanner(meta); paint(); } });
+  function buildHeroShow(){
+    var el=document.getElementById("heroShow"); if(!el||typeof DEALS==="undefined") return;
+    var list=DEALS.slice().sort(function(a,b){return pctOff(b)-pctOff(a);}).slice(0,8);
+    if(!list.length) return;
+    function card(d){
+      return '<div class="hs-card"><div class="hs-top">'+logoImg(d.al)+'<span class="hs-route">'+cityName(d.f)+' <b>&rarr;</b> '+cityName(d.t)+'</span></div>'
+        +'<div class="hs-bot"><span class="hs-pr">\u00a3'+d.price+'</span><span class="hs-tag">tracked low</span></div></div>';
+    }
+    var cards=list.map(card).join("");
+    el.innerHTML='<div class="hs-h">Now boarding &middot; cheapest tracked</div><div class="hs-marq"><div class="hs-track">'+cards+cards+'</div></div>';
+  }
+  paint(); buildHeroShow();
+  loadLiveDeals().then(function(meta){ if(meta){ liveBanner(meta); paint(); buildHeroShow(); } });
   loadRoutes().then(function(r){ renderRoutes(r, document.getElementById("edgeRows")); });
 
   var fromEl=document.getElementById("from"), toEl=document.getElementById("to");

@@ -381,3 +381,33 @@ a.brow:hover .go{opacity:1}
   .lr-book{grid-column:1/-1;justify-self:stretch;text-align:center;margin-top:4px}
 }
 .lr-time small{display:block;font-family:'Inter',sans-serif;font-weight:600;font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:#61789b;margin-bottom:2px}
+
+
+/* === live fixes: dropdown contrast, hero showcase, board price caption === */
+.ac{color:var(--ink)}
+.ac-row{color:var(--ink)}
+.ac-city{color:var(--ink)}
+.ac-none{color:var(--muted)}
+.i-price .prcap{display:block;font-size:10.5px;letter-spacing:.03em;text-transform:uppercase;color:#8a94a2;font-weight:700;margin-top:1px}
+
+@media(min-width:900px){
+  .hero .herogrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:38px;align-items:start}
+  .hero-right{margin-top:58px}
+}
+.hero-left{min-width:0}
+.hero-right{margin-top:22px}
+.heroshow{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.11);border-radius:18px;padding:16px 16px 10px}
+.hs-h{font-size:12px;letter-spacing:.10em;text-transform:uppercase;color:#9db4d4;font-weight:700;margin:2px 2px 12px}
+.hs-marq{position:relative;height:300px;overflow:hidden;-webkit-mask-image:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent)}
+.hs-track{display:flex;flex-direction:column;gap:10px;animation:hsroll 26s linear infinite;will-change:transform}
+.heroshow:hover .hs-track{animation-play-state:paused}
+@keyframes hsroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+.hs-card{display:flex;flex-direction:column;gap:8px;background:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 8px 20px rgba(3,15,32,.18)}
+.hs-top{display:flex;align-items:center;gap:10px}
+.hs-route{font-weight:700;font-size:14.5px;color:var(--ink)}
+.hs-route b{color:var(--amber-d);font-weight:800;margin:0 2px}
+.hs-bot{display:flex;align-items:center;justify-content:space-between}
+.hs-pr{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:22px;color:var(--ink)}
+.hs-tag{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:#8a94a2;font-weight:700}
+.hs-card .al{width:26px;height:26px;border-radius:6px;overflow:hidden;display:inline-flex;flex:0 0 26px}
+.hs-card .al img{width:100%;height:100%;object-fit:contain}

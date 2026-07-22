@@ -248,14 +248,14 @@ function renderBoard(deals, el){
     deals.map(d=>{
       const v = verdict(d), s = STATUS[d.status]||STATUS.hold, off = pctOff(d);
       const tracking = v.txt==="TRACKING";
-      const saveTxt = tracking ? "gathering history" : (off>=8 ? `▼${off}% vs usual` : "watching");
+      const saveTxt = tracking ? "gathering history" : (off>=8 ? `▼${off}% vs our tracked avg` : "watching");
       const saveCls = (tracking || off<8) ? "save watch" : "save";
       const errBadge = isErrorFare(d) ? `<span class="vd err">⚡ ERROR FARE?</span>` : "";
       return `<a class="brow" href="${bookingUrl(d)}" target="_blank" rel="sponsored noopener nofollow" title="Search this ${cityName(d.f)} → ${cityName(d.t)} fare">
         <span class="route">${routeCodes(d.f)}<span class="arw">→</span>${routeCodes(d.t)}</span>
         <div class="i-flight">${logoImg(d.al)}<span class="fl-txt"><span class="air">${airlineName(d.al)||"&nbsp;"}</span><span class="win">${cityName(d.f)} → ${cityName(d.t)} · ${d.win}${d.dir?"":" · 1 stop"}</span></span></div>
-        <div class="i-price"><span class="pr">£${d.price}</span><span class="${saveCls}">${saveTxt}</span></div>
-        <div class="i-tags">${errBadge}<span class="vd ${v.cls}">${v.txt}</span><span class="st ${s.cls}"><span class="dot"></span> ${s.txt}</span><span class="go">Find fare ›</span></div>
+        <div class="i-price"><span class="pr">£${d.price}</span><span class="prcap">tracked low · check live</span><span class="${saveCls}">${saveTxt}</span></div>
+        <div class="i-tags">${errBadge}<span class="vd ${v.cls}">${v.txt}</span><span class="st ${s.cls}"><span class="dot"></span> ${s.txt}</span><span class="go">Check live price ›</span></div>
         ${priceBand(d)}
       </a>`;
     }).join("");
@@ -356,7 +356,7 @@ function liveBanner(meta){
     el.innerHTML = `<span class="lb-dot"></span> <b>Live fares, now boarding.</b> ` +
       `Good-price verdicts switch on once we've banked ~2 weeks of history` +
       (meta.days_until_verdicts?` — <b>${meta.days_until_verdicts} days to go.</b>`:``) +
-      ` Prices are real and updating four times a day.`;
+      ` Prices are tracked lows, refreshed through the day — not a live quote until you check.`;
     el.style.display = "block";
   }
 }
@@ -455,11 +455,11 @@ function renderResults(data, el, from, to, date){
       +'<div class="lr-air">'+logoImg(f.airline)+'<span class="lr-airtxt"><b>'+airlineName(f.airline)+'</b><small>'+stops+(dur?' · '+dur:'')+'</small></span></div>'
       +'<div class="lr-time">'+(dep?'<small>departs</small>'+dep:'<small>time TBC</small>')+'</div>'
       +'<div class="lr-price"><span class="lr-pr">£'+f.price+'</span>'+vd+'</div>'
-      +'<div class="lr-book">Book ›</div>'
+      +'<div class="lr-book">Check price ›</div>'
       +'</a>';
   }).join("");
   el.innerHTML = head + ctxLine + '<div class="lrows">'+rows+'</div>'
-    +'<p class="afx" style="padding:14px 2px 0">Live fares, cheapest first. The Book button hands off to finish your booking — some links are affiliate links, at no extra cost to you. <a href="affiliate-disclosure.html">How this works</a>.</p>';
+    +'<p class="afx" style="padding:14px 2px 0">Indicative live fares, cheapest first — the airline or agent confirms the final price at checkout. Some links are affiliate links, at no extra cost to you. <a href="affiliate-disclosure.html">How this works</a>.</p>';
   return true;
 }
 
@@ -507,6 +507,6 @@ function renderChrome(active){
     <div class="fcol"><h5>Product</h5><a href="deals.html">The board</a><a href="destinations.html">Destinations</a><a href="city-in-focus.html">City in Focus</a><a href="how-it-works.html">How it works</a><a href="pricing.html">Pricing</a></div>
     <div class="fcol"><h5>Company</h5><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="mailto:${NEWSLETTER_EMAIL}">Contact</a></div>
     <div class="fcol"><h5>Legal</h5><a href="#">Terms</a><a href="#">Privacy</a><a href="affiliate-disclosure.html">Affiliate disclosure</a></div></div>
-    <div class="fine">theflightlounge.com · © The Flight Lounge. Some links on this site are affiliate links: if you book through them we may earn a commission, at no extra cost to you — it never changes which fare we show or the verdict we give it. We help you find fares and link you to airlines and travel sites — we don't sell flights or take payment for them, so we're not a travel agent and hold no ATOL. Savings shown against our own 90-day median, never an invented reference price. Self-transfer routes carry the risks we flag on every recommendation. Airline logos are trademarks of their respective owners, shown for identification.</div></div></footer>`;
+    <div class="fine">theflightlounge.com · © The Flight Lounge. Some links on this site are affiliate links: if you book through them we may earn a commission, at no extra cost to you — it never changes which fare we show or the verdict we give it. We help you find fares and link you to airlines and travel sites — we don't sell flights or take payment for them, so we're not a travel agent and hold no ATOL. Savings shown against our own tracked price history (we are in our first weeks of data), never an invented reference price. Board prices are indicative tracked lows — the airline confirms the final fare at checkout. Self-transfer routes carry the risks we flag on every recommendation. Airline logos are trademarks of their respective owners, shown for identification.</div></div></footer>`;
   wireNewsletter();
 }
