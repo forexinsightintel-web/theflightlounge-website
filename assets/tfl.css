@@ -302,3 +302,43 @@ a.brow:hover .go{opacity:1}
 .er-link:hover{background:rgba(221,180,87,.08)}
 .er .flag a{color:var(--amber);font-weight:700;text-decoration:underline}
 .er .flag a:hover{color:#f0c064}
+
+/* ============ v1.2: price-history band, buy/hold call, error fare ============ */
+.pband{grid-column:1/-1;margin-top:10px;border-top:1px dashed #1b2c44}
+.pband.flat{color:#8fa5c4;font-size:13px;padding-top:12px}
+.pband.flat b{color:#fff;font-family:'JetBrains Mono',monospace}
+.pband-row{display:flex;align-items:center;gap:16px;padding:26px 4px 22px}
+.pband-cap{flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-weight:800;font-size:15px;color:#c2d4ef;display:flex;flex-direction:column;line-height:1.05;text-align:center;min-width:52px}
+.pband-cap small{font-family:'Inter',sans-serif;font-weight:600;font-size:9.5px;letter-spacing:.03em;text-transform:uppercase;color:#61789b;margin-top:4px}
+.pband-track{position:relative;flex:1;height:10px;border-radius:6px;
+  background:linear-gradient(90deg,#1f9d57 0%,#43a869 20%,#d9b24a 58%,#d76b6b 100%);
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.45)}
+.pband-usual{position:absolute;top:50%;transform:translate(-50%,-50%)}
+.pband-usual i{display:block;width:2px;height:20px;background:#eaf1fb;opacity:.5;margin:0 auto;border-radius:2px}
+.pband-usual em{position:absolute;top:15px;left:50%;transform:translateX(-50%);white-space:nowrap;font-style:normal;font-size:10.5px;font-weight:700;color:#9db4d4}
+.pband-now{position:absolute;top:50%;transform:translate(-50%,-50%);z-index:2}
+.pband-now i{display:block;width:17px;height:17px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 7px rgba(0,0,0,.55);margin:0 auto}
+.pband-now.zg i{background:#25B36B}.pband-now.za i{background:#E6A93B}.pband-now.zr i{background:#E1585F}
+.pband-now em{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);white-space:nowrap;font-style:normal;font-size:12.5px;font-weight:800;color:#fff;background:rgba(8,12,18,.92);border:1px solid #33496b;padding:3px 9px;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,.4)}
+.pband-call{font-size:14px;font-weight:800;letter-spacing:.01em;text-align:center}
+.pband-call.cg{color:#4ede93}.pband-call.ca{color:#f0c064}.pband-call.cr{color:#f0908f}.pband-call.ct{color:#8fa5c4;font-weight:700}
+.vd.err{background:rgba(225,88,95,.2);color:#ff9a9a;border:1px solid rgba(225,88,95,.55);animation:pulse 1.15s infinite}
+@media(max-width:760px){
+  .pband-row{padding:24px 0 20px;gap:10px}
+  .pband-cap{font-size:13px;min-width:44px}
+}
+/* price band on destination cards (light surface) */
+.dcard .pband{border-top:1px solid var(--line);margin-top:0;padding:0 14px}
+.dcard .pband-cap{color:var(--ink)}
+.dcard .pband-cap small{color:var(--muted)}
+.dcard .pband-now em{background:#fff;color:var(--ink);border-color:var(--line)}
+.dcard .pband-usual em{color:var(--muted)}
+.dcard .pband-call.ct{color:var(--muted)}
+.dcard .pband-call.cg{color:var(--green-d)}
+
+/* budget explorer chips */
+.budget{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:0 0 16px}
+.budget .blbl{font-size:14.5px;font-weight:600;color:var(--muted);margin-right:2px}
+.bchip{background:#fff;border:1px solid var(--line);border-radius:22px;padding:8px 17px;font-size:14.5px;font-weight:700;color:var(--muted);cursor:pointer;transition:.12s}
+.bchip:hover{color:var(--ink);border-color:var(--amber)}
+.bchip.on{background:var(--ink);color:#fff;border-color:var(--ink)}

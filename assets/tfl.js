@@ -202,6 +202,42 @@ function logoImg(iata){
 }
 function routeCodes(code){ return (code||"").split("").map(ch=>`<span>${ch}</span>`).join(""); }
 
+/* ---- price-history band + buy/hold call (the data edge, made visible) ---- */
+function _clamp(x){ return Math.max(2, Math.min(98, x)); }
+function priceZone(d){
+  const lo=d.low, hi=d.high; if(!(hi>lo)) return "g";
+  const pos=(d.price-lo)/(hi-lo)*100;
+  return pos<=34?"g":(pos<=66?"a":"r");
+}
+function priceCall(d){
+  // Strong book/hold call only once real history is banked; else honest "tracking".
+  if(d.verdict==="TRACKING") return {cls:"t", txt:"Tracking — building its price history"};
+  const lo=d.low, hi=d.high, pos=(hi>lo)?(d.price-lo)/(hi-lo)*100:0;
+  if(pos<=25 || pctOff(d)>=22) return {cls:"g", txt:"✓ Book now — near its cheapest"};
+  if(pos<=55) return {cls:"a", txt:"Fair price — up to you"};
+  return {cls:"r", txt:"Hold — pricier than usual"};
+}
+function isErrorFare(d){ return d.verdict!=="TRACKING" && pctOff(d)>=50; }
+function priceBand(d){
+  const lo=d.low||d.price, hi=d.high||d.price, med=d.median||d.price, px=d.price;
+  if(!(hi>lo)){
+    return `<div class="pband flat">Fare's held steady around <b>£${px}</b> so far — no swings yet.</div>`;
+  }
+  const pos=_clamp((px-lo)/(hi-lo)*100), medpos=_clamp((med-lo)/(hi-lo)*100);
+  const zone=priceZone(d), call=priceCall(d);
+  return `<div class="pband">
+    <div class="pband-row">
+      <span class="pband-cap">£${lo}<small>cheapest seen</small></span>
+      <div class="pband-track">
+        <span class="pband-usual" style="left:${medpos}%" title="Usually £${med}"><i></i><em>usual £${med}</em></span>
+        <span class="pband-now z${zone}" style="left:${pos}%"><em>today £${px}</em><i></i></span>
+      </div>
+      <span class="pband-cap hi">£${hi}<small>highest seen</small></span>
+    </div>
+    <div class="pband-call c${call.cls}">${call.txt}</div>
+  </div>`;
+}
+
 function renderBoard(deals, el){
   if(!el) return;
   if(!deals.length){ el.innerHTML =
@@ -214,11 +250,13 @@ function renderBoard(deals, el){
       const tracking = v.txt==="TRACKING";
       const saveTxt = tracking ? "gathering history" : (off>=8 ? `▼${off}% vs usual` : "watching");
       const saveCls = (tracking || off<8) ? "save watch" : "save";
+      const errBadge = isErrorFare(d) ? `<span class="vd err">⚡ ERROR FARE?</span>` : "";
       return `<a class="brow" href="${bookingUrl(d)}" target="_blank" rel="sponsored noopener nofollow" title="Search this ${cityName(d.f)} → ${cityName(d.t)} fare">
         <span class="route">${routeCodes(d.f)}<span class="arw">→</span>${routeCodes(d.t)}</span>
         <div class="i-flight">${logoImg(d.al)}<span class="fl-txt"><span class="air">${airlineName(d.al)||"&nbsp;"}</span><span class="win">${cityName(d.f)} → ${cityName(d.t)} · ${d.win}${d.dir?"":" · 1 stop"}</span></span></div>
         <div class="i-price"><span class="pr">£${d.price}</span><span class="${saveCls}">${saveTxt}</span></div>
-        <div class="i-tags"><span class="vd ${v.cls}">${v.txt}</span><span class="st ${s.cls}"><span class="dot"></span> ${s.txt}</span><span class="go">Find fare ›</span></div>
+        <div class="i-tags">${errBadge}<span class="vd ${v.cls}">${v.txt}</span><span class="st ${s.cls}"><span class="dot"></span> ${s.txt}</span><span class="go">Find fare ›</span></div>
+        ${priceBand(d)}
       </a>`;
     }).join("");
 }

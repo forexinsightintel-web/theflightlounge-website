@@ -35,6 +35,7 @@
 <div class="boardsec" id="board"><div class="wrap">
   <div id="livebanner"></div>
   <div class="bhd"><h2 class="disp" id="boardTitle">Cheapest fares on the board</h2><a href="deals.html" class="see">See all →</a></div>
+  <div class="budget" id="budget"><span class="blbl">Show me anywhere under:</span><span class="bchip on" data-b="0">Any price</span><span class="bchip" data-b="40">£40</span><span class="bchip" data-b="60">£60</span><span class="bchip" data-b="100">£100</span></div>
   <div class="board" id="boardEl"></div>
   <p class="afx">Tap any fare to search it live. Some links are affiliate links — if you book we may earn a commission, at no extra cost to you. <a href="affiliate-disclosure.html">How this works</a>.</p>
 </div></div>
@@ -76,13 +77,25 @@
 <script src="assets/tfl.js"></script>
 <script>
   renderChrome("index.html");
+  var budgetMax=0;
   function paint(){
-    var top = DEALS.slice().sort(function(a,b){return pctOff(b)-pctOff(a)}).slice(0,7);
-    renderBoard(top, document.getElementById("boardEl"));
+    var list = DEALS.slice();
+    if(budgetMax>0) list = list.filter(function(d){return d.price<=budgetMax;});
+    var top = list.sort(function(a,b){return budgetMax>0 ? (a.price-b.price) : (pctOff(b)-pctOff(a));})
+                  .slice(0, budgetMax>0?12:7);
+    var el=document.getElementById("boardEl");
+    if(!top.length){ el.innerHTML='<div class="board-empty">No fares under £'+budgetMax+' on the board right now — try a higher budget.</div>'; }
+    else renderBoard(top, el);
     document.getElementById("statRoutes").textContent = DEALS.length;
     var origins={}; DEALS.forEach(function(d){origins[d.f]=1;});
     document.getElementById("statOrigins").textContent = Object.keys(origins).length;
+    document.getElementById("boardTitle").textContent = budgetMax>0 ? ("Anywhere under £"+budgetMax) : "Cheapest fares on the board";
   }
+  document.getElementById("budget").onclick=function(e){
+    var c=e.target.closest(".bchip"); if(!c) return;
+    this.querySelectorAll(".bchip").forEach(function(x){x.classList.remove("on");});
+    c.classList.add("on"); budgetMax=+c.dataset.b; paint();
+  };
   paint();
   loadLiveDeals().then(function(meta){ if(meta){ liveBanner(meta); paint(); } });
   loadRoutes().then(function(r){ renderRoutes(r, document.getElementById("edgeRows")); });

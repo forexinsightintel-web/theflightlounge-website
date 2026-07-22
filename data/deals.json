@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-07-22T10:52:26Z",
+ "generated_utc": "2026-07-22T11:55:16Z",
  "currency": "gbp",
  "history_building": true,
  "collection_days": 3,
@@ -16,7 +16,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 29,
+   "high": 37,
+   "hist": [
+    34,
+    29,
+    29
+   ]
   },
   {
    "f": "LON",
@@ -29,7 +36,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 19
+   "n": 19,
+   "low": 30,
+   "high": 34,
+   "hist": [
+    30,
+    30,
+    30
+   ]
   },
   {
    "f": "LON",
@@ -42,7 +56,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 30,
+   "high": 41,
+   "hist": [
+    33,
+    30,
+    36
+   ]
   },
   {
    "f": "LON",
@@ -55,7 +76,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 32,
+   "high": 36,
+   "hist": [
+    32,
+    32,
+    32
+   ]
   },
   {
    "f": "LON",
@@ -68,7 +96,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 33,
+   "high": 49,
+   "hist": [
+    33,
+    34,
+    34
+   ]
   },
   {
    "f": "LON",
@@ -81,7 +116,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 7
+   "n": 7,
+   "low": 33,
+   "high": 33,
+   "hist": [
+    33,
+    33,
+    33
+   ]
   },
   {
    "f": "LON",
@@ -94,7 +136,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 16
+   "n": 16,
+   "low": 34,
+   "high": 59,
+   "hist": [
+    34,
+    36,
+    36
+   ]
   },
   {
    "f": "MAN",
@@ -107,7 +156,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 7
+   "n": 7,
+   "low": 34,
+   "high": 36,
+   "hist": [
+    36,
+    34,
+    34
+   ]
   },
   {
    "f": "BHX",
@@ -120,7 +176,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 0
+   "n": 0,
+   "low": 34,
+   "high": 64,
+   "hist": [
+    64,
+    64,
+    34
+   ]
   },
   {
    "f": "LON",
@@ -133,7 +196,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 35,
+   "high": 36,
+   "hist": [
+    35,
+    35,
+    35
+   ]
   },
   {
    "f": "LON",
@@ -146,7 +216,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 16
+   "n": 16,
+   "low": 36,
+   "high": 42,
+   "hist": [
+    36,
+    36,
+    41
+   ]
   },
   {
    "f": "LON",
@@ -159,7 +236,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 37,
+   "high": 63,
+   "hist": [
+    37,
+    37,
+    37
+   ]
   },
   {
    "f": "DUB",
@@ -172,7 +256,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 15
+   "n": 15,
+   "low": 37,
+   "high": 37,
+   "hist": [
+    37,
+    37,
+    37
+   ]
   },
   {
    "f": "LON",
@@ -185,7 +276,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 16
+   "n": 16,
+   "low": 39,
+   "high": 80,
+   "hist": [
+    55,
+    41,
+    39
+   ]
   },
   {
    "f": "LON",
@@ -198,7 +296,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 39,
+   "high": 54,
+   "hist": [
+    45,
+    50,
+    39
+   ]
   },
   {
    "f": "LON",
@@ -211,7 +316,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 39,
+   "high": 102,
+   "hist": [
+    39,
+    39,
+    41
+   ]
   },
   {
    "f": "LON",
@@ -224,7 +336,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 47,
+   "high": 98,
+   "hist": [
+    47,
+    47,
+    47
+   ]
   },
   {
    "f": "LON",
@@ -237,7 +356,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 19
+   "n": 19,
+   "low": 49,
+   "high": 154,
+   "hist": [
+    49,
+    68,
+    68
+   ]
   },
   {
    "f": "MAN",
@@ -250,7 +376,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 16
+   "n": 16,
+   "low": 49,
+   "high": 88,
+   "hist": [
+    79,
+    49,
+    49
+   ]
   },
   {
    "f": "MAN",
@@ -263,7 +396,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 7
+   "n": 7,
+   "low": 49,
+   "high": 49,
+   "hist": [
+    49,
+    49,
+    49
+   ]
   },
   {
    "f": "DUB",
@@ -276,7 +416,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 5
+   "n": 5,
+   "low": 49,
+   "high": 49,
+   "hist": [
+    49,
+    49,
+    49
+   ]
   },
   {
    "f": "LON",
@@ -289,7 +436,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 51,
+   "high": 92,
+   "hist": [
+    51,
+    51,
+    51
+   ]
   },
   {
    "f": "LON",
@@ -302,7 +456,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 19
+   "n": 19,
+   "low": 53,
+   "high": 68,
+   "hist": [
+    55,
+    53,
+    54
+   ]
   },
   {
    "f": "LON",
@@ -315,7 +476,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 53,
+   "high": 89,
+   "hist": [
+    53,
+    53,
+    53
+   ]
   },
   {
    "f": "LON",
@@ -328,7 +496,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 53,
+   "high": 85,
+   "hist": [
+    53,
+    53,
+    53
+   ]
   },
   {
    "f": "LON",
@@ -341,7 +516,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 19
+   "n": 19,
+   "low": 53,
+   "high": 63,
+   "hist": [
+    53,
+    53,
+    53
+   ]
   },
   {
    "f": "LON",
@@ -354,7 +536,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 54,
+   "high": 65,
+   "hist": [
+    54,
+    60,
+    60
+   ]
   },
   {
    "f": "BHX",
@@ -367,7 +556,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 11
+   "n": 11,
+   "low": 54,
+   "high": 57,
+   "hist": [
+    54,
+    54,
+    54
+   ]
   },
   {
    "f": "DUB",
@@ -380,7 +576,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 13
+   "n": 13,
+   "low": 54,
+   "high": 111,
+   "hist": [
+    54,
+    57,
+    57
+   ]
   },
   {
    "f": "MAN",
@@ -393,7 +596,12 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 0
+   "n": 0,
+   "low": 55,
+   "high": 55,
+   "hist": [
+    55
+   ]
   },
   {
    "f": "LON",
@@ -406,7 +614,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 16
+   "n": 16,
+   "low": 56,
+   "high": 71,
+   "hist": [
+    56,
+    62,
+    62
+   ]
   },
   {
    "f": "MAN",
@@ -419,7 +634,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 9
+   "n": 9,
+   "low": 56,
+   "high": 72,
+   "hist": [
+    56,
+    56,
+    56
+   ]
   },
   {
    "f": "NCL",
@@ -432,7 +654,13 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 0
+   "n": 0,
+   "low": 57,
+   "high": 104,
+   "hist": [
+    104,
+    57
+   ]
   },
   {
    "f": "LON",
@@ -445,7 +673,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 58,
+   "high": 108,
+   "hist": [
+    61,
+    58,
+    58
+   ]
   },
   {
    "f": "LON",
@@ -458,7 +693,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 12
+   "n": 12,
+   "low": 58,
+   "high": 77,
+   "hist": [
+    58,
+    58,
+    61
+   ]
   },
   {
    "f": "MAN",
@@ -471,7 +713,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 58,
+   "high": 82,
+   "hist": [
+    58,
+    58,
+    58
+   ]
   },
   {
    "f": "DUB",
@@ -484,7 +733,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 0
+   "n": 0,
+   "low": 58,
+   "high": 72,
+   "hist": [
+    58,
+    72,
+    72
+   ]
   },
   {
    "f": "BHX",
@@ -497,7 +753,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 7
+   "n": 7,
+   "low": 59,
+   "high": 59,
+   "hist": [
+    59,
+    59,
+    59
+   ]
   },
   {
    "f": "BRS",
@@ -510,7 +773,13 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 4
+   "n": 4,
+   "low": 59,
+   "high": 84,
+   "hist": [
+    59,
+    74
+   ]
   },
   {
    "f": "DUB",
@@ -523,7 +792,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 15
+   "n": 15,
+   "low": 59,
+   "high": 96,
+   "hist": [
+    59,
+    70,
+    70
+   ]
   },
   {
    "f": "DUB",
@@ -536,7 +812,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 15
+   "n": 15,
+   "low": 59,
+   "high": 85,
+   "hist": [
+    59,
+    59,
+    59
+   ]
   },
   {
    "f": "BHX",
@@ -549,7 +832,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 0
+   "n": 0,
+   "low": 60,
+   "high": 69,
+   "hist": [
+    69,
+    60,
+    60
+   ]
   },
   {
    "f": "BRS",
@@ -562,7 +852,13 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 4
+   "n": 4,
+   "low": 60,
+   "high": 60,
+   "hist": [
+    60,
+    60
+   ]
   },
   {
    "f": "MAN",
@@ -575,7 +871,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 17
+   "n": 17,
+   "low": 61,
+   "high": 90,
+   "hist": [
+    76,
+    61,
+    61
+   ]
   },
   {
    "f": "LON",
@@ -588,7 +891,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 62,
+   "high": 67,
+   "hist": [
+    62,
+    62,
+    62
+   ]
   },
   {
    "f": "MAN",
@@ -601,7 +911,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 13
+   "n": 13,
+   "low": 62,
+   "high": 79,
+   "hist": [
+    62,
+    62,
+    62
+   ]
   },
   {
    "f": "DUB",
@@ -614,7 +931,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 15
+   "n": 15,
+   "low": 62,
+   "high": 104,
+   "hist": [
+    62,
+    62,
+    62
+   ]
   },
   {
    "f": "LON",
@@ -627,7 +951,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 63,
+   "high": 114,
+   "hist": [
+    63,
+    63,
+    63
+   ]
   },
   {
    "f": "LON",
@@ -640,7 +971,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 65,
+   "high": 100,
+   "hist": [
+    65,
+    65,
+    65
+   ]
   },
   {
    "f": "LON",
@@ -653,7 +991,14 @@
    "dir": false,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 7
+   "n": 7,
+   "low": 66,
+   "high": 67,
+   "hist": [
+    67,
+    66,
+    67
+   ]
   },
   {
    "f": "LON",
@@ -666,7 +1011,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 68,
+   "high": 96,
+   "hist": [
+    68,
+    68,
+    68
+   ]
   },
   {
    "f": "EDI",
@@ -679,7 +1031,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 7
+   "n": 7,
+   "low": 68,
+   "high": 68,
+   "hist": [
+    68,
+    68,
+    68
+   ]
   },
   {
    "f": "LON",
@@ -692,7 +1051,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 71,
+   "high": 84,
+   "hist": [
+    71,
+    71,
+    71
+   ]
   },
   {
    "f": "LON",
@@ -705,7 +1071,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 21
+   "n": 21,
+   "low": 73,
+   "high": 97,
+   "hist": [
+    73,
+    73,
+    73
+   ]
   },
   {
    "f": "LON",
@@ -718,7 +1091,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 16
+   "n": 16,
+   "low": 73,
+   "high": 98,
+   "hist": [
+    81,
+    73,
+    73
+   ]
   },
   {
    "f": "MAN",
@@ -731,7 +1111,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 13
+   "n": 13,
+   "low": 74,
+   "high": 85,
+   "hist": [
+    74,
+    74,
+    74
+   ]
   },
   {
    "f": "EDI",
@@ -744,7 +1131,14 @@
    "dir": false,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 4
+   "n": 4,
+   "low": 75,
+   "high": 112,
+   "hist": [
+    75,
+    90,
+    90
+   ]
   },
   {
    "f": "DUB",
@@ -757,7 +1151,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 12
+   "n": 12,
+   "low": 75,
+   "high": 92,
+   "hist": [
+    75,
+    75,
+    75
+   ]
   },
   {
    "f": "LON",
@@ -770,7 +1171,14 @@
    "dir": false,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 0
+   "n": 0,
+   "low": 76,
+   "high": 122,
+   "hist": [
+    76,
+    122,
+    122
+   ]
   },
   {
    "f": "DUB",
@@ -783,7 +1191,14 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 13
+   "n": 13,
+   "low": 76,
+   "high": 108,
+   "hist": [
+    76,
+    76,
+    76
+   ]
   }
  ]
 }
