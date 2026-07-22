@@ -212,3 +212,87 @@ footer .wordmark{color:#fff}
 .fcol a{display:block;color:#93a8c6;font-size:14px;padding:4px 0}
 .fcol a:hover{color:#fff}
 .fine{border-top:1px solid #16233a;margin-top:34px;padding-top:20px;color:#7c92b2;font-size:12.5px;line-height:1.6}
+
+/* ============ v1.1 additions: monetisation, search UX, logos ============ */
+
+/* bigger, clearer airline logos */
+.al{flex:0 0 44px;width:44px;height:44px;border-radius:9px}
+.al img{max-width:36px;max-height:36px}
+.al-fb{font-size:13px}
+.dcard .dbot .al{flex:0 0 44px}
+
+/* clickable board rows + "Find fare" cue */
+a.brow{color:inherit;text-decoration:none;cursor:pointer;transition:background .12s}
+a.brow:hover{background:#0e1a2a}
+.i-tags .go{font-size:11px;font-weight:800;letter-spacing:.03em;color:var(--amber);opacity:.0;transition:opacity .12s;white-space:nowrap}
+a.brow:hover .go{opacity:1}
+@media(max-width:760px){ .i-tags .go{opacity:1} }
+
+/* affiliate disclosure micro-line under boards */
+.afx{color:#7f96b6;font-size:12.5px;margin:12px 2px 0;line-height:1.5}
+.afx a{color:var(--amber-d);font-weight:600;text-decoration:underline}
+
+/* date field + who selector */
+.srow input[type=date]{color:var(--ink);font-weight:600}
+.srow input[type=date]::-webkit-calendar-picker-indicator{cursor:pointer;opacity:.55}
+.pax{position:absolute;right:8px;left:auto;top:calc(100% - 6px);min-width:300px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);z-index:30;padding:8px 14px 14px;display:none}
+.pax.show{display:block}
+.pax-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line)}
+.pax-l{font-weight:700;font-size:15px;color:var(--ink)}
+.pax-s{font-size:12.5px;color:var(--muted)}
+.pax-ctl{display:flex;align-items:center;gap:14px}
+.pax-b{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-size:20px;font-weight:700;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
+.pax-b:disabled{opacity:.35;cursor:not-allowed}
+.pax-b:not(:disabled):hover{border-color:var(--amber);color:var(--amber-d)}
+.pax-n{min-width:18px;text-align:center;font-weight:800;font-size:16px}
+.pax-cls{display:flex;gap:10px;margin-top:14px}
+.pax-cb{flex:1;padding:11px;border-radius:10px;border:1.5px solid var(--line);background:#fff;font-weight:700;font-size:14px;color:var(--muted);cursor:pointer;font-family:inherit}
+.pax-cb.on{border-color:var(--ink);background:var(--ink);color:#fff}
+
+/* clear (x) button inside airport fields */
+.fld{position:relative}
+.clearx{position:absolute;right:0;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;border:none;background:#eef0f4;color:#5a6472;font-size:14px;line-height:1;cursor:pointer;display:none;align-items:center;justify-content:center}
+.fld.has .clearx{display:flex}
+
+/* hotels module on destination cards */
+.dcard .dhotel{display:block;text-align:center;border-top:1px solid var(--line);padding:11px;font-size:13px;font-weight:700;color:var(--amber-d);background:#faf6ec}
+.dcard .dhotel:hover{background:#f4ecd6}
+.dcard .dcta{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.dcard .dcta a{text-align:center;padding:11px;font-size:12.5px;font-weight:800;letter-spacing:.02em}
+.dcard .dcta .dflight{color:#241900;background:var(--amber)}
+.dcard .dcta .dflight:hover{background:var(--amber-d);color:#fff}
+.dcard .dcta .dstay{color:var(--amber-d);background:#faf6ec}
+.dcard .dcta .dstay:hover{background:#f4ecd6}
+
+/* footer newsletter band */
+.nl{display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;border-bottom:1px solid #16233a;padding-bottom:30px;margin-bottom:8px}
+.nl h4{font-size:22px;margin:0 0 6px;color:#fff;letter-spacing:-.01em}
+.nl p{margin:0;color:#8fa5c4;font-size:14.5px;max-width:420px}
+.nl-form{display:flex;gap:10px;flex:0 0 auto}
+.nl-form input{border:1px solid #2a3d58;background:#0d1622;color:#fff;border-radius:10px;padding:12px 14px;font-size:15px;font-family:inherit;min-width:230px}
+.nl-form input::placeholder{color:#6f86a6}
+.nl-done{color:var(--amber);font-weight:700;font-size:16px}
+
+/* hero photo band */
+.hero{position:relative;overflow:hidden}
+.hero .heroimg{position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(21,39,66,.82),rgba(15,32,56,.92)),
+  radial-gradient(1200px 400px at 80% -10%,rgba(221,180,87,.25),transparent 60%),
+  linear-gradient(120deg,#0f2038,#1c3a63 60%,#2a5285);z-index:0}
+.hero .wrap{position:relative;z-index:1}
+
+/* editorial / city-in-focus */
+.ed-hero{position:relative;color:#fff;padding:64px 0 54px;overflow:hidden;background:linear-gradient(180deg,#152742,#0f2038)}
+.ed-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.ed-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .14s,box-shadow .14s}
+.ed-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.ed-card .edtop{height:150px;display:flex;align-items:flex-end;padding:16px;color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px}
+.ed-card .edbody{padding:16px 18px}
+.ed-card .edbody p{color:var(--muted);font-size:14px;margin:0 0 12px}
+.ed-card .edbody a{color:var(--amber-d);font-weight:700;font-size:14px}
+.ed-photo{background:linear-gradient(135deg,#e0be8f,#b8863b 55%,#2a3d58)}
+.article{max-width:760px}
+.article h2{font-family:'Space Grotesk',sans-serif;font-size:26px;letter-spacing:-.02em;margin:34px 0 12px}
+.article p{color:#39424f;font-size:16.5px;margin:0 0 16px}
+.article .callout{background:#faf6ec;border:1px solid #eadfc4;border-radius:14px;padding:18px 20px;margin:20px 0}
+.article .callout a{color:var(--amber-d);font-weight:700}

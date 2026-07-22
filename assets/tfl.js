@@ -2,6 +2,17 @@
    Live fares load from data/deals.json (built by make_flights_site.py from the
    fare collector); falls back to the sample set below if the feed isn't there. */
 
+/* ============================================================
+   AFFILIATE CONFIG  (Travelpayouts — The Flight Lounge, ID 753562)
+   Change the marker here in ONE place and every monetised link updates.
+   Flights: Aviasales deep-link (auto-approved, live now).
+   Hotels : Booking.com live search — swap hotelUrl() to your approved
+            Travelpayouts hotel deep-link the moment Booking clears review.
+   ============================================================ */
+const TP_MARKER = "753562";
+const NEWSLETTER_ENDPOINT = "";           // paste a Formspree/Mailchimp POST URL to go live; blank = mailto fallback
+const NEWSLETTER_EMAIL   = "hello@theflightlounge.com";
+
 const AIRPORTS = [
   {c:"LON", city:"London (all)", ctry:"UK", grp:"london"},
   {c:"LHR", city:"London Heathrow", ctry:"UK", grp:"london"},
@@ -20,29 +31,43 @@ const AIRPORTS = [
   {c:"NCL", city:"Newcastle", ctry:"UK", grp:"ne"},
   {c:"BFS", city:"Belfast", ctry:"UK", grp:"ni"},
   {c:"DUB", city:"Dublin", ctry:"IE", grp:"ie"},
+  {c:"ORK", city:"Cork", ctry:"IE", grp:"ie"},
   {c:"LIS", city:"Lisbon", ctry:"Portugal"}, {c:"OPO", city:"Porto", ctry:"Portugal"},
   {c:"FAO", city:"Faro", ctry:"Portugal"}, {c:"BCN", city:"Barcelona", ctry:"Spain"},
   {c:"MAD", city:"Madrid", ctry:"Spain"}, {c:"AGP", city:"Malaga", ctry:"Spain"},
   {c:"PMI", city:"Palma", ctry:"Spain"}, {c:"ALC", city:"Alicante", ctry:"Spain"},
-  {c:"IBZ", city:"Ibiza", ctry:"Spain"}, {c:"ROM", city:"Rome", ctry:"Italy"},
+  {c:"IBZ", city:"Ibiza", ctry:"Spain"}, {c:"TFS", city:"Tenerife", ctry:"Spain"},
+  {c:"ROM", city:"Rome", ctry:"Italy"}, {c:"FCO", city:"Rome", ctry:"Italy"},
   {c:"MIL", city:"Milan", ctry:"Italy"}, {c:"VCE", city:"Venice", ctry:"Italy"},
-  {c:"NAP", city:"Naples", ctry:"Italy"}, {c:"CDG", city:"Paris", ctry:"France"},
-  {c:"NCE", city:"Nice", ctry:"France"}, {c:"MRS", city:"Marseille", ctry:"France"},
-  {c:"AMS", city:"Amsterdam", ctry:"Netherlands"}, {c:"BER", city:"Berlin", ctry:"Germany"},
-  {c:"MUC", city:"Munich", ctry:"Germany"}, {c:"PRG", city:"Prague", ctry:"Czechia"},
+  {c:"NAP", city:"Naples", ctry:"Italy"}, {c:"PMO", city:"Palermo", ctry:"Italy"},
+  {c:"CTA", city:"Catania", ctry:"Italy"}, {c:"CDG", city:"Paris", ctry:"France"},
+  {c:"PAR", city:"Paris", ctry:"France"}, {c:"NCE", city:"Nice", ctry:"France"},
+  {c:"MRS", city:"Marseille", ctry:"France"}, {c:"AMS", city:"Amsterdam", ctry:"Netherlands"},
+  {c:"BER", city:"Berlin", ctry:"Germany"}, {c:"MUC", city:"Munich", ctry:"Germany"},
+  {c:"FRA", city:"Frankfurt", ctry:"Germany"}, {c:"PRG", city:"Prague", ctry:"Czechia"},
   {c:"BUD", city:"Budapest", ctry:"Hungary"}, {c:"KRK", city:"Krakow", ctry:"Poland"},
-  {c:"ATH", city:"Athens", ctry:"Greece"}, {c:"IST", city:"Istanbul", ctry:"Turkey"},
-  {c:"RAK", city:"Marrakesh", ctry:"Morocco"}, {c:"OSL", city:"Oslo", ctry:"Norway"},
-  {c:"KEF", city:"Reykjavik", ctry:"Iceland"}, {c:"DXB", city:"Dubai", ctry:"UAE"},
+  {c:"WAW", city:"Warsaw", ctry:"Poland"}, {c:"ATH", city:"Athens", ctry:"Greece"},
+  {c:"JTR", city:"Santorini", ctry:"Greece"}, {c:"RHO", city:"Rhodes", ctry:"Greece"},
+  {c:"IST", city:"Istanbul", ctry:"Turkey"}, {c:"DLM", city:"Dalaman", ctry:"Turkey"},
+  {c:"BJV", city:"Bodrum", ctry:"Turkey"}, {c:"RAK", city:"Marrakesh", ctry:"Morocco"},
+  {c:"OSL", city:"Oslo", ctry:"Norway"}, {c:"CPH", city:"Copenhagen", ctry:"Denmark"},
+  {c:"ARN", city:"Stockholm", ctry:"Sweden"}, {c:"KEF", city:"Reykjavik", ctry:"Iceland"},
+  {c:"GVA", city:"Geneva", ctry:"Switzerland"}, {c:"VIE", city:"Vienna", ctry:"Austria"},
+  {c:"SPU", city:"Split", ctry:"Croatia"}, {c:"DBV", city:"Dubrovnik", ctry:"Croatia"},
+  {c:"LCA", city:"Larnaca", ctry:"Cyprus"}, {c:"PFO", city:"Paphos", ctry:"Cyprus"},
+  {c:"DXB", city:"Dubai", ctry:"UAE"}, {c:"AUH", city:"Abu Dhabi", ctry:"UAE"},
   {c:"NYC", city:"New York", ctry:"USA"}, {c:"JFK", city:"New York JFK", ctry:"USA"},
   {c:"BOS", city:"Boston", ctry:"USA"}, {c:"MIA", city:"Miami", ctry:"USA"},
-  {c:"LAX", city:"Los Angeles", ctry:"USA"}, {c:"YYZ", city:"Toronto", ctry:"Canada"},
-  {c:"ORK", city:"Cork", ctry:"IE"}, {c:"BKK", city:"Bangkok", ctry:"Thailand"},
+  {c:"LAX", city:"Los Angeles", ctry:"USA"}, {c:"LAS", city:"Las Vegas", ctry:"USA"},
+  {c:"ORL", city:"Orlando", ctry:"USA"}, {c:"YYZ", city:"Toronto", ctry:"Canada"},
+  {c:"BKK", city:"Bangkok", ctry:"Thailand"}, {c:"HKT", city:"Phuket", ctry:"Thailand"},
   {c:"SIN", city:"Singapore", ctry:"Singapore"}, {c:"DEL", city:"Delhi", ctry:"India"},
+  {c:"CUN", city:"Cancun", ctry:"Mexico"}, {c:"MLE", city:"Maldives", ctry:"Maldives"},
 ];
 
 const AIRLINES = {
-  BA:"British Airways", VS:"Virgin Atlantic", U2:"easyJet", FR:"Ryanair", W6:"Wizz Air",
+  BA:"British Airways", VS:"Virgin Atlantic", U2:"easyJet", FR:"Ryanair", RK:"Ryanair",
+  W6:"Wizz Air", W9:"Wizz Air UK", W4:"Wizz Air Malta", LS:"Jet2",
   TP:"TAP Air Portugal", IB:"Iberia", VY:"Vueling", AF:"Air France", KL:"KLM",
   LH:"Lufthansa", LX:"Swiss", OS:"Austrian", SN:"Brussels Airlines", AZ:"ITA Airways",
   EI:"Aer Lingus", FI:"Icelandair", EK:"Emirates", QR:"Qatar Airways", EY:"Etihad",
@@ -51,6 +76,36 @@ const AIRLINES = {
   QF:"Qantas", A3:"Aegean", LO:"LOT Polish", DY:"Norwegian", PC:"Pegasus",
   HV:"Transavia", TO:"Transavia France", EW:"Eurowings", D8:"Norwegian Intl",
   AT:"Royal Air Maroc", MS:"EgyptAir",
+};
+
+/* City-name lookup so the board & destination cards never show a raw code.
+   Merged over the AIRPORTS-derived map below. */
+const CITY_EXTRA = {
+  LON:"London", LHR:"London", LGW:"London", STN:"London", LTN:"London",
+  MAN:"Manchester", LPL:"Liverpool", LBA:"Leeds Bradford", BHX:"Birmingham",
+  EMA:"East Midlands", BRS:"Bristol", CWL:"Cardiff", EDI:"Edinburgh", GLA:"Glasgow",
+  NCL:"Newcastle", BFS:"Belfast", ABZ:"Aberdeen", EXT:"Exeter", SOU:"Southampton",
+  DUB:"Dublin", ORK:"Cork",
+  AGP:"Malaga", ALC:"Alicante", AMS:"Amsterdam", ATH:"Athens", AUH:"Abu Dhabi",
+  BCN:"Barcelona", BER:"Berlin", BJV:"Bodrum", BKK:"Bangkok", BOS:"Boston",
+  CAI:"Cairo", CUN:"Cancun", DLM:"Dalaman", DPS:"Bali", DXB:"Dubai", FAO:"Faro",
+  FCO:"Rome", GVA:"Geneva", HKT:"Phuket", HNL:"Honolulu", IBZ:"Ibiza", IST:"Istanbul",
+  JFK:"New York", JTR:"Santorini", KEF:"Reykjavik", LAS:"Las Vegas", LAX:"Los Angeles",
+  LCA:"Larnaca", LIS:"Lisbon", MAD:"Madrid", MEL:"Melbourne", MEX:"Mexico City",
+  MIA:"Miami", MLE:"Maldives", MRS:"Marseille", NAP:"Naples", NYC:"New York",
+  OPO:"Porto", ORL:"Orlando", PAR:"Paris", PFO:"Paphos", PMI:"Palma", PRG:"Prague",
+  RAK:"Marrakesh", RHO:"Rhodes", SIN:"Singapore", SYD:"Sydney", TFS:"Tenerife",
+  TYO:"Tokyo", VCE:"Venice", VIE:"Vienna", YYZ:"Toronto", ZTH:"Zakynthos",
+  MIL:"Milan", OSL:"Oslo", CPH:"Copenhagen", ARN:"Stockholm", WAW:"Warsaw",
+  BUD:"Budapest", KRK:"Krakow", SPU:"Split", DBV:"Dubrovnik", PMO:"Palermo",
+  CTA:"Catania", OLB:"Olbia", SEA:"Seattle", SFO:"San Francisco", CHI:"Chicago",
+  ATL:"Atlanta", DFW:"Dallas", WAS:"Washington", YVR:"Vancouver", HKG:"Hong Kong",
+  SGN:"Ho Chi Minh City", HAN:"Hanoi", MNL:"Manila", CPT:"Cape Town", JNB:"Johannesburg",
+  NBO:"Nairobi", DEL:"Delhi", BOM:"Mumbai", GOI:"Goa", CMB:"Colombo", AKL:"Auckland",
+  PER:"Perth", BNE:"Brisbane", SJO:"San Jose", LIM:"Lima", BOG:"Bogota", SCL:"Santiago",
+  EZE:"Buenos Aires", GIG:"Rio de Janeiro", GRU:"Sao Paulo", HAV:"Havana", SJU:"San Juan",
+  PUJ:"Punta Cana", MBJ:"Montego Bay", BGI:"Barbados", FRA:"Frankfurt", MUC:"Munich",
+  NCE:"Nice", CDG:"Paris",
 };
 
 /* sample fares — replaced by the live feed at load when present */
@@ -63,9 +118,58 @@ let DEALS = [
   {f:"LON",t:"NCE",al:"U2",price:47,median:93,win:"Oct 2026",dir:true,status:"hold"},
 ];
 
-const CITY = Object.fromEntries(AIRPORTS.map(a=>[a.c, a.city.replace(" (all)","")]));
+const CITY = Object.assign(
+  Object.fromEntries(AIRPORTS.map(a=>[a.c, a.city.replace(" (all)","")])),
+  CITY_EXTRA
+);
+function cityName(iata){ return CITY[iata] || iata || ""; }
 function airlineName(iata){ return AIRLINES[iata] || iata || ""; }
 function pctOff(d){ return d.median ? Math.round((1 - d.price/d.median)*100) : 0; }
+
+/* ---- current search selection (drives the affiliate deep-links) ---- */
+const SEARCH = { depart:"", ret:"", adults:1, children:0, infants:0, tripClass:0 };
+
+/* Month label ("Sep 2026") or feed month ("2026-09") -> a YYYY-MM-DD for the
+   booking link. Mid-month (the 15th) gives the widest live availability. */
+const _MON = {jan:"01",feb:"02",mar:"03",apr:"04",may:"05",jun:"06",jul:"07",aug:"08",sep:"09",oct:"10",nov:"11",dec:"12"};
+function departDate(d){
+  if(d.month && /^\d{4}-\d{2}$/.test(d.month)) return d.month+"-15";
+  const m = (d.win||"").match(/([A-Za-z]{3})\s+(\d{4})/);
+  if(m && _MON[m[1].toLowerCase()]) return m[2]+"-"+_MON[m[1].toLowerCase()]+"-15";
+  return "";
+}
+
+/* ---- MONETISED: flight deep-link (Aviasales via Travelpayouts marker) ---- */
+function bookingUrl(d){
+  const p = new URLSearchParams({
+    origin_iata: d.f, destination_iata: d.t,
+    adults: String(SEARCH.adults||1),
+    children: String(SEARCH.children||0),
+    infants: String(SEARCH.infants||0),
+    trip_class: String(SEARCH.tripClass||0),
+    currency: "gbp", marker: TP_MARKER
+  });
+  const dep = SEARCH.depart || departDate(d);
+  if(dep) p.set("depart_date", dep);
+  if(SEARCH.ret) p.set("return_date", SEARCH.ret);
+  return "https://search.aviasales.com/flights/?" + p.toString();
+}
+
+/* ---- MONETISED (pending Booking.com approval): per-destination hotels ----
+   Booking.com live search now; drop in your Travelpayouts hotel deep-link
+   (tp.media/r?...&marker=753562) here once the program clears review. */
+function hotelUrl(d){
+  const city = cityName(d.t);
+  const dep = SEARCH.depart || departDate(d);
+  const p = new URLSearchParams({ ss: city, group_adults:"2", no_rooms:"1", group_children:"0" });
+  if(dep){
+    const din = new Date(dep+"T00:00:00");
+    const dout = new Date(din.getTime() + 3*864e5);
+    const iso = t => t.toISOString().slice(0,10);
+    p.set("checkin", iso(din)); p.set("checkout", iso(dout));
+  }
+  return "https://www.booking.com/searchresults.html?" + p.toString();
+}
 
 const VMAP={STEAL:{cls:"g",txt:"STEAL"},"GOOD PRICE":{cls:"g",txt:"GOOD PRICE"},TYPICAL:{cls:"a",txt:"TYPICAL"},WATCH:{cls:"a",txt:"WATCH"},TRACKING:{cls:"t",txt:"TRACKING"}};
 function verdict(d){
@@ -82,7 +186,7 @@ function logoImg(iata){
   if(!iata) return `<span class="al"><span class="al-fb" style="display:flex">✈</span></span>`;
   const nm = airlineName(iata);
   return `<span class="al" title="${nm}">
-    <img src="https://pics.avs.io/60/60/${iata}.png" alt="${nm}" loading="lazy"
+    <img src="https://pics.avs.io/120/120/${iata}.png" alt="${nm}" loading="lazy"
          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <span class="al-fb" style="display:none">${iata}</span></span>`;
 }
@@ -94,18 +198,18 @@ function renderBoard(deals, el){
     `<div class="board-empty">No fares on that route yet — we're watching it. Try “Anywhere”, or widen to nearby airports.</div>`;
     return; }
   el.innerHTML =
-    `<div class="board-hd"><span>From → To</span><span>Flight</span><span>Price</span><span style="text-align:right">Verdict / status</span></div>` +
+    `<div class="board-hd"><span>From → To</span><span>Flight</span><span>Price</span><span style="text-align:right">Verdict / book</span></div>` +
     deals.map(d=>{
       const v = verdict(d), s = STATUS[d.status]||STATUS.hold, off = pctOff(d);
       const tracking = v.txt==="TRACKING";
       const saveTxt = tracking ? "gathering history" : (off>=8 ? `▼${off}% vs usual` : "watching");
       const saveCls = (tracking || off<8) ? "save watch" : "save";
-      return `<div class="brow">
+      return `<a class="brow" href="${bookingUrl(d)}" target="_blank" rel="sponsored noopener nofollow" title="Search this ${cityName(d.f)} → ${cityName(d.t)} fare">
         <span class="route">${routeCodes(d.f)}<span class="arw">→</span>${routeCodes(d.t)}</span>
-        <div class="i-flight">${logoImg(d.al)}<span class="fl-txt"><span class="air">${airlineName(d.al)||"&nbsp;"}</span><span class="win">${d.win}${d.dir?"":" · 1 stop"}</span></span></div>
+        <div class="i-flight">${logoImg(d.al)}<span class="fl-txt"><span class="air">${airlineName(d.al)||"&nbsp;"}</span><span class="win">${cityName(d.f)} → ${cityName(d.t)} · ${d.win}${d.dir?"":" · 1 stop"}</span></span></div>
         <div class="i-price"><span class="pr">£${d.price}</span><span class="${saveCls}">${saveTxt}</span></div>
-        <div class="i-tags"><span class="vd ${v.cls}">${v.txt}</span><span class="st ${s.cls}"><span class="dot"></span> ${s.txt}</span></div>
-      </div>`;
+        <div class="i-tags"><span class="vd ${v.cls}">${v.txt}</span><span class="st ${s.cls}"><span class="dot"></span> ${s.txt}</span><span class="go">Find fare ›</span></div>
+      </a>`;
     }).join("");
 }
 
@@ -114,15 +218,15 @@ function attachAC(inputEl, panelEl, onPick){
     q = (q||"").toLowerCase().trim();
     let list = AIRPORTS;
     if(q) list = AIRPORTS.filter(a =>
-      a.c.toLowerCase().includes(q) || a.city.toLowerCase().includes(q) || (a.ctry||"").toLowerCase().includes(q));
-    list = list.slice(0,7);
+      a.c.toLowerCase().startsWith(q) || a.city.toLowerCase().includes(q) || (a.ctry||"").toLowerCase().includes(q));
+    list = list.slice(0,8);
     panelEl.innerHTML = list.map(a =>
       `<div class="ac-row" data-c="${a.c}"><span class="ac-code">${a.c}</span><span class="ac-city">${a.city}</span><span class="ac-ctry">${a.ctry||""}</span></div>`).join("")
-      || `<div class="ac-row ac-none">No match</div>`;
+      || `<div class="ac-row ac-none">No match — try a city or 3-letter code</div>`;
     panelEl.classList.add("show");
   }
   inputEl.addEventListener("focus", ()=>render(inputEl.value));
-  inputEl.addEventListener("input", ()=>render(inputEl.value));
+  inputEl.addEventListener("input", ()=>{ inputEl.dataset.code=""; render(inputEl.value); });
   panelEl.addEventListener("mousedown", e=>{
     const row = e.target.closest(".ac-row[data-c]"); if(!row) return;
     const a = AIRPORTS.find(x=>x.c===row.dataset.c);
@@ -150,6 +254,44 @@ function searchDeals(from, to, nearby){
   }).sort((a,b)=>pctOff(b)-pctOff(a));
 }
 
+/* ---- passenger / class popover (the "Who" selector) ---- */
+function paxLabel(){
+  const n = SEARCH.adults + SEARCH.children + SEARCH.infants;
+  const cls = SEARCH.tripClass ? "Business" : "Economy";
+  return `${n} ${n===1?"traveller":"travellers"} · ${cls}`;
+}
+function attachPax(triggerEl, panelEl, onChange){
+  function row(key,label,sub,min){
+    return `<div class="pax-row"><div><div class="pax-l">${label}</div><div class="pax-s">${sub}</div></div>
+      <div class="pax-ctl"><button type="button" class="pax-b" data-k="${key}" data-d="-1" ${SEARCH[key]<=min?'disabled':''}>−</button>
+      <span class="pax-n" id="paxn-${key}">${SEARCH[key]}</span>
+      <button type="button" class="pax-b" data-k="${key}" data-d="1">+</button></div></div>`;
+  }
+  function paint(){
+    panelEl.innerHTML =
+      row("adults","Adults","12+",1) + row("children","Children","2–11",0) + row("infants","Infants","under 2",0) +
+      `<div class="pax-cls"><button type="button" class="pax-cb ${SEARCH.tripClass===0?'on':''}" data-c="0">Economy</button>
+       <button type="button" class="pax-cb ${SEARCH.tripClass===1?'on':''}" data-c="1">Business</button></div>`;
+    if(triggerEl) triggerEl.value = paxLabel();
+    if(onChange) onChange();
+  }
+  triggerEl.addEventListener("focus", ()=>{ panelEl.classList.add("show"); });
+  triggerEl.addEventListener("click", ()=>{ panelEl.classList.add("show"); });
+  panelEl.addEventListener("click", e=>{
+    const b = e.target.closest(".pax-b");
+    if(b){ const k=b.dataset.k, dlt=+b.dataset.d;
+      SEARCH[k] = Math.max(k==="adults"?1:0, (SEARCH[k]||0)+dlt);
+      if(k==="infants") SEARCH.infants = Math.min(SEARCH.infants, SEARCH.adults);
+      paint(); return; }
+    const c = e.target.closest(".pax-cb");
+    if(c){ SEARCH.tripClass = +c.dataset.c; paint(); return; }
+  });
+  document.addEventListener("mousedown", e=>{
+    if(!panelEl.contains(e.target) && e.target!==triggerEl) panelEl.classList.remove("show");
+  });
+  paint();
+}
+
 /* ---- live fare feed ---- */
 async function loadLiveDeals(){
   try{
@@ -171,28 +313,50 @@ function liveBanner(meta){
   }
 }
 
+/* ---- newsletter capture ---- */
+function wireNewsletter(){
+  const f = document.getElementById("nlForm"); if(!f) return;
+  f.addEventListener("submit", async e=>{
+    e.preventDefault();
+    const inp = f.querySelector("input[type=email]"); const email=(inp.value||"").trim();
+    const done = ()=>{ f.innerHTML = `<div class="nl-done">✦ You're on the list — deals land in your inbox.</div>`; };
+    if(!email) return;
+    if(NEWSLETTER_ENDPOINT){
+      try{ await fetch(NEWSLETTER_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email})}); }catch(_){}
+      done();
+    } else {
+      window.location.href = `mailto:${NEWSLETTER_EMAIL}?subject=Subscribe&body=Add%20me%20to%20the%20deals%20list:%20${encodeURIComponent(email)}`;
+      done();
+    }
+  });
+}
+
 /* ---- shared chrome ---- */
 const LOGO_SVG = (id)=>`<svg class="plane" viewBox="0 0 34 34" fill="none" aria-hidden="true">
   <defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E7CE83"/><stop offset=".5" stop-color="#C6A24C"/><stop offset="1" stop-color="#8F6F33"/></linearGradient></defs>
   <g transform="translate(6 4.5) rotate(40 12 12)"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" fill="url(#${id})"/></g>
   <g stroke="url(#${id})" stroke-width="2.3" stroke-linecap="round"><line x1="2.5" y1="22" x2="8.5" y2="22"/><line x1="1.5" y1="26.5" x2="10" y2="26.5"/><line x1="4.5" y1="31" x2="12" y2="31"/></g></svg>`;
-const NAVITEMS = [["deals.html","Deals"],["how-it-works.html","How it works"],["destinations.html","Destinations"],["pricing.html","Pricing"]];
+const NAVITEMS = [["deals.html","Deals"],["destinations.html","Destinations"],["city-in-focus.html","City in Focus"],["how-it-works.html","How it works"],["pricing.html","Pricing"]];
 function renderChrome(active){
   const links = NAVITEMS.map(([h,t])=>`<a href="${h}" class="${active===h?'on':''}">${t}</a>`).join("");
   const hdr = document.getElementById("hdr");
   if(hdr) hdr.innerHTML = `<header><div class="wrap nav">
     <a class="brand" href="index.html"><span class="logo">${LOGO_SVG('gH')}</span><span class="wordmark">THE FLIGHT LOUNGE</span></a>
     <nav class="navlinks">${links}</nav>
-    <div class="navcta"><a href="#" class="ghost">Log in</a><a href="pricing.html" class="btn">Join free</a></div>
+    <div class="navcta"><a href="pricing.html" class="ghost">Log in</a><a href="pricing.html" class="btn">Join free</a></div>
     <button class="hamb" aria-label="Menu" onclick="document.getElementById('mobnav').classList.toggle('show')"><span></span><span></span><span></span></button>
     </div><div class="mobnav" id="mobnav">${NAVITEMS.map(([h,t])=>`<a href="${h}">${t}</a>`).join("")}<a href="pricing.html">Join free</a></div></header>`;
   const ftr = document.getElementById("ftr");
-  if(ftr) ftr.innerHTML = `<footer><div class="wrap"><div class="foot-grid">
+  if(ftr) ftr.innerHTML = `<footer><div class="wrap">
+    <div class="nl"><div><h4 class="disp">Get the steals before they go</h4><p>Free deal alerts to your inbox — the best fares from your airports, no spam.</p></div>
+      <form id="nlForm" class="nl-form"><input type="email" placeholder="you@email.com" aria-label="Email" required><button class="btn" type="submit">Join free</button></form></div>
+    <div class="foot-grid">
     <div style="max-width:300px"><div class="brand" style="margin-bottom:10px;color:#fff"><span class="logo">${LOGO_SVG('gF')}</span><span class="wordmark">THE FLIGHT LOUNGE</span></div>
     <p style="color:#8fa5c4;font-size:13px;margin:0 0 3px;letter-spacing:.02em">Smart Flight Comparison</p>
     <p style="color:#8fa5c4;font-size:14px;margin:8px 0 0">Cheap flights, with the receipts. Honest verdicts and the data edge no other club shows you.</p></div>
-    <div class="fcol"><h5>Product</h5><a href="deals.html">The board</a><a href="how-it-works.html">How it works</a><a href="destinations.html">Destinations</a><a href="pricing.html">Pricing</a></div>
-    <div class="fcol"><h5>Company</h5><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="#">Contact</a></div>
-    <div class="fcol"><h5>Legal</h5><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Affiliate disclosure</a></div></div>
-    <div class="fine">theflightlounge.com · © The Flight Lounge. We help you find fares and link you to airlines and travel sites — we don't sell flights or take payment for them, so we're not a travel agent and hold no ATOL. Savings shown against our own 90-day median, never an invented reference price. Self-transfer routes carry the risks we flag on every recommendation. Airline logos are trademarks of their respective owners, shown for identification.</div></div></footer>`;
+    <div class="fcol"><h5>Product</h5><a href="deals.html">The board</a><a href="destinations.html">Destinations</a><a href="city-in-focus.html">City in Focus</a><a href="how-it-works.html">How it works</a><a href="pricing.html">Pricing</a></div>
+    <div class="fcol"><h5>Company</h5><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="mailto:${NEWSLETTER_EMAIL}">Contact</a></div>
+    <div class="fcol"><h5>Legal</h5><a href="#">Terms</a><a href="#">Privacy</a><a href="affiliate-disclosure.html">Affiliate disclosure</a></div></div>
+    <div class="fine">theflightlounge.com · © The Flight Lounge. Some links on this site are affiliate links: if you book through them we may earn a commission, at no extra cost to you — it never changes which fare we show or the verdict we give it. We help you find fares and link you to airlines and travel sites — we don't sell flights or take payment for them, so we're not a travel agent and hold no ATOL. Savings shown against our own 90-day median, never an invented reference price. Self-transfer routes carry the risks we flag on every recommendation. Airline logos are trademarks of their respective owners, shown for identification.</div></div></footer>`;
+  wireNewsletter();
 }

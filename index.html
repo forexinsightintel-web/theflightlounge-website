@@ -13,15 +13,19 @@
 <div id="hdr"></div>
 
 <section class="hero">
+  <div class="heroimg"></div>
   <div class="wrap">
     <p class="lead">✦ Live board · updating now</p>
     <h1 class="disp">Cheap flights, <span class="am">now boarding.</span></h1>
     <div class="tabs"><span class="tab on">✈ Flights</span><span class="tab">◎ Everywhere</span><span class="tab">☆ Watch a route</span></div>
-    <div class="chips"><span class="chip">Return ⌄</span><span class="chip">1 Adult ⌄</span><span class="chip">Economy ⌄</span></div>
+    <div class="chips"><span class="chip">Return ⌄</span><span class="chip" id="chipPax">1 traveller ⌄</span><span class="chip" id="chipCls">Economy ⌄</span></div>
     <div class="search">
-      <div class="srow"><span class="ic">◉</span><div class="fld"><div class="lbl">From</div><input id="from" autocomplete="off" placeholder="London (LON)" value="London (all) (LON)" data-code="LON"></div><div class="ac" id="acFrom"></div><span class="swap" id="swap" title="Swap">⇅</span></div>
-      <div class="srow"><span class="ic">◍</span><div class="fld"><div class="lbl">To</div><input id="to" autocomplete="off" placeholder="Anywhere — show me the cheapest ✦"></div><div class="ac" id="acTo"></div></div>
-      <div class="sgrid2"><div class="srow"><span class="ic">▦</span><div class="fld"><div class="lbl">When</div><input placeholder="I'm flexible"></div></div><div class="srow"><span class="ic">☺</span><div class="fld"><div class="lbl">Who</div><input value="1 Adult"></div></div></div>
+      <div class="srow"><span class="ic">◉</span><div class="fld" id="fldFrom"><div class="lbl">From</div><input id="from" autocomplete="off" placeholder="Departure airport or city"><button type="button" class="clearx" data-for="from" aria-label="Clear">×</button></div><div class="ac" id="acFrom"></div><span class="swap" id="swap" title="Swap">⇅</span></div>
+      <div class="srow"><span class="ic">◍</span><div class="fld" id="fldTo"><div class="lbl">To</div><input id="to" autocomplete="off" placeholder="Anywhere — show me the cheapest ✦"><button type="button" class="clearx" data-for="to" aria-label="Clear">×</button></div><div class="ac" id="acTo"></div></div>
+      <div class="sgrid2">
+        <div class="srow"><span class="ic">▦</span><div class="fld"><div class="lbl">When</div><input id="when" type="date" aria-label="Departure date"></div></div>
+        <div class="srow"><span class="ic">☺</span><div class="fld"><div class="lbl">Who</div><input id="who" readonly autocomplete="off" value="1 traveller · Economy"></div><div class="pax" id="paxPanel"></div></div>
+      </div>
     </div>
     <div class="schecks"><span class="chk" id="chkDirect"><span class="box"></span> Direct flights only</span><span class="chk on" id="chkNearby"><span class="box"></span> Include nearby airports</span></div>
     <button class="searchbtn" id="searchBtn">Show me the deals</button>
@@ -32,13 +36,14 @@
   <div id="livebanner"></div>
   <div class="bhd"><h2 class="disp" id="boardTitle">Cheapest fares on the board</h2><a href="deals.html" class="see">See all →</a></div>
   <div class="board" id="boardEl"></div>
+  <p class="afx">Tap any fare to search it live. Some links are affiliate links — if you book we may earn a commission, at no extra cost to you. <a href="affiliate-disclosure.html">How this works</a>.</p>
 </div></div>
 
 <div class="trust"><div class="wrap trust-in">
   <div><div class="tl">How we call it</div><div class="odo"><span class="cur" style="font-size:15px">✦</span></div>
     <div class="ts" style="margin-top:2px;max-width:340px">Every fare weighed against our own price history. Verdicts switch on once we've banked enough — no invented “was” prices, ever.</div></div>
   <div class="tstat"><div class="tl">Routes tracked</div><b class="disp" id="statRoutes">—</b><div class="ts">prices refreshed four times a day</div></div>
-  <div class="tstat"><div class="tl">Airports covered</div><b class="disp">50+</b><div class="ts">UK & Ireland origins, worldwide</div></div>
+  <div class="tstat"><div class="tl">Departure airports live</div><b class="disp" id="statOrigins">—</b><div class="ts">UK & Ireland origins — more added every week</div></div>
 </div></div>
 
 <section>
@@ -80,6 +85,8 @@
     var top = DEALS.slice().sort(function(a,b){return pctOff(b)-pctOff(a)}).slice(0,7);
     renderBoard(top, document.getElementById("boardEl"));
     document.getElementById("statRoutes").textContent = DEALS.length;
+    var origins={}; DEALS.forEach(function(d){origins[d.f]=1;});
+    document.getElementById("statOrigins").textContent = Object.keys(origins).length;
   }
   paint();
   loadLiveDeals().then(function(meta){ if(meta){ liveBanner(meta); paint(); } });
@@ -87,6 +94,22 @@
   var fromEl=document.getElementById("from"), toEl=document.getElementById("to");
   attachAC(fromEl, document.getElementById("acFrom"));
   attachAC(toEl, document.getElementById("acTo"));
+
+  // date picker → feeds the affiliate deep-link
+  var whenEl=document.getElementById("when");
+  var today=new Date(); whenEl.min=today.toISOString().slice(0,10);
+  whenEl.onchange=function(){ SEARCH.depart=whenEl.value||""; };
+
+  // Who selector (adults/children/infants + class); keeps the hero chips in sync
+  attachPax(document.getElementById("who"), document.getElementById("paxPanel"), function(){
+    var n=SEARCH.adults+SEARCH.children+SEARCH.infants;
+    document.getElementById("chipPax").textContent=n+(n===1?" traveller ⌄":" travellers ⌄");
+    document.getElementById("chipCls").textContent=(SEARCH.tripClass?"Business":"Economy")+" ⌄";
+  });
+
+  // clear (×) buttons + show/hide as the field fills
+  document.querySelectorAll(".clearx").forEach(function(x){ x.onclick=function(){ var el=document.getElementById(x.dataset.for); el.value=""; el.dataset.code=""; el.closest(".fld").classList.remove("has"); el.focus(); }; });
+  [fromEl,toEl].forEach(function(el){ function tog(){ el.closest(".fld").classList.toggle("has", !!el.value); } el.addEventListener("input",tog); el.addEventListener("change",tog); el.addEventListener("focus",tog); });
   document.getElementById("swap").onclick=function(){var a=fromEl.value,ac=fromEl.dataset.code;fromEl.value=toEl.value;fromEl.dataset.code=toEl.dataset.code||"";toEl.value=a;toEl.dataset.code=ac||"";};
   document.getElementById("chkDirect").onclick=function(){this.classList.toggle("on")};
   document.getElementById("chkNearby").onclick=function(){this.classList.toggle("on")};
