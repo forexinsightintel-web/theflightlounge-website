@@ -3,13 +3,15 @@
    fare collector); falls back to the sample set below if the feed isn't there. */
 
 /* ============================================================
-   AFFILIATE CONFIG  (Travelpayouts — The Flight Lounge, ID 753562)
-   Change the marker here in ONE place and every monetised link updates.
-   Flights: Aviasales deep-link (auto-approved, live now).
+   AFFILIATE / LINK CONFIG
+   Flights: Skyscanner deep-links — trusted UK brand, English/GBP, covers
+            EVERY route. Commission switches on once the Skyscanner
+            affiliate application (via Impact.com) is approved: add your
+            tracking (associateid / impact deep-link wrapper) in bookingUrl().
    Hotels : Booking.com live search — swap hotelUrl() to your approved
-            Travelpayouts hotel deep-link the moment Booking clears review.
+            hotel affiliate deep-link once that program clears review.
    ============================================================ */
-const TP_MARKER = "753562";
+const TP_MARKER = "753562";   // legacy Travelpayouts id (hotels/future use)
 const NEWSLETTER_ENDPOINT = "";           // paste a Formspree/Mailchimp POST URL to go live; blank = mailto fallback
 const NEWSLETTER_EMAIL   = "hello@theflightlounge.com";
 
@@ -139,20 +141,28 @@ function departDate(d){
   return "";
 }
 
-/* ---- MONETISED: flight deep-link (Aviasales via Travelpayouts marker) ---- */
+/* ---- flight hand-off: Skyscanner deep-link (English/UK, covers every route) ----
+   Skyscanner path format: /transport/flights/{origin}/{dest}/{YYMMDD}/?...
+   Codes are IATA (city or airport). Missing dest -> "anywhere". */
+function _skyDate(d){
+  const dep = SEARCH.depart || departDate(d);   // YYYY-MM-DD
+  if(!dep || !/^\d{4}-\d{2}-\d{2}$/.test(dep)) return "";
+  return dep.slice(2,4) + dep.slice(5,7) + dep.slice(8,10);   // YYMMDD
+}
 function bookingUrl(d){
+  const o = (d.f||"").toLowerCase();
+  const t = (d.t||"").toLowerCase() || "anywhere";
+  const ymd = _skyDate(d);
+  let u = `https://www.skyscanner.net/transport/flights/${o}/${t}/`;
+  if(ymd) u += ymd + "/";
   const p = new URLSearchParams({
-    origin_iata: d.f, destination_iata: d.t,
     adults: String(SEARCH.adults||1),
-    children: String(SEARCH.children||0),
-    infants: String(SEARCH.infants||0),
-    trip_class: String(SEARCH.tripClass||0),
-    currency: "gbp", marker: TP_MARKER
+    cabinclass: SEARCH.tripClass ? "business" : "economy",
+    rtn: "0", currency: "GBP", market: "UK", locale: "en-GB"
   });
-  const dep = SEARCH.depart || departDate(d);
-  if(dep) p.set("depart_date", dep);
-  if(SEARCH.ret) p.set("return_date", SEARCH.ret);
-  return "https://search.aviasales.com/flights/?" + p.toString();
+  if((SEARCH.children||0)>0) p.set("children", String(SEARCH.children));
+  if((SEARCH.infants||0)>0) p.set("infants", String(SEARCH.infants));
+  return u + "?" + p.toString();
 }
 
 /* ---- MONETISED (pending Booking.com approval): per-destination hotels ----

@@ -117,7 +117,15 @@
     var res=searchDeals(from,to,nearby);
     if(direct) res=res.filter(function(d){return d.dir});
     document.getElementById("boardTitle").textContent=(to==="ANY")?("Cheapest from "+(CITY[from]||from)):((CITY[from]||from)+" → "+(CITY[to]||to));
-    renderBoard(res, document.getElementById("boardEl"));
+    var boardEl=document.getElementById("boardEl");
+    if(!res.length){
+      var live=bookingUrl({f:from, t:(to==="ANY"?"":to)});
+      var dest=(to==="ANY")?"anywhere":(CITY[to]||to);
+      boardEl.innerHTML='<div class="board-empty">We\'re not tracking '+(CITY[from]||from)+' → '+dest+' on the board yet — our honest verdict needs banked price history first. You can still search it live right now:'
+        +'<div style="margin-top:14px"><a class="btn" href="'+live+'" target="_blank" rel="sponsored noopener nofollow">Search '+(CITY[from]||from)+' → '+dest+' live →</a></div></div>';
+    } else {
+      renderBoard(res, boardEl);
+    }
     document.getElementById("board").scrollIntoView({behavior:"smooth"});
   }
   document.getElementById("searchBtn").onclick=runSearch;
