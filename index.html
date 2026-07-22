@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Flight Lounge — cheap flights, now boarding</title>
+<meta name="description" content="Search fares from your airport and let the board show you genuinely cheap flights — each with an honest good-price verdict.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tfl.css">
+</head>
+<body>
+<div id="hdr"></div>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="lead">✦ Live board · updating now</p>
+    <h1 class="disp">Cheap flights, <span class="am">now boarding.</span></h1>
+    <div class="tabs"><span class="tab on">✈ Flights</span><span class="tab">◎ Everywhere</span><span class="tab">☆ Watch a route</span></div>
+    <div class="chips"><span class="chip">Return ⌄</span><span class="chip">1 Adult ⌄</span><span class="chip">Economy ⌄</span></div>
+    <div class="search">
+      <div class="srow"><span class="ic">◉</span><div class="fld"><div class="lbl">From</div><input id="from" autocomplete="off" placeholder="London (LON)" value="London (all) (LON)" data-code="LON"></div><div class="ac" id="acFrom"></div><span class="swap" id="swap" title="Swap">⇅</span></div>
+      <div class="srow"><span class="ic">◍</span><div class="fld"><div class="lbl">To</div><input id="to" autocomplete="off" placeholder="Anywhere — show me the cheapest ✦"></div><div class="ac" id="acTo"></div></div>
+      <div class="sgrid2"><div class="srow"><span class="ic">▦</span><div class="fld"><div class="lbl">When</div><input placeholder="I'm flexible"></div></div><div class="srow"><span class="ic">☺</span><div class="fld"><div class="lbl">Who</div><input value="1 Adult"></div></div></div>
+    </div>
+    <div class="schecks"><span class="chk" id="chkDirect"><span class="box"></span> Direct flights only</span><span class="chk on" id="chkNearby"><span class="box"></span> Include nearby airports</span></div>
+    <button class="searchbtn" id="searchBtn">Show me the deals</button>
+  </div>
+</section>
+
+<div class="boardsec" id="board"><div class="wrap">
+  <div id="livebanner"></div>
+  <div class="bhd"><h2 class="disp" id="boardTitle">Cheapest fares on the board</h2><a href="deals.html" class="see">See all →</a></div>
+  <div class="board" id="boardEl"></div>
+</div></div>
+
+<div class="trust"><div class="wrap trust-in">
+  <div><div class="tl">How we call it</div><div class="odo"><span class="cur" style="font-size:15px">✦</span></div>
+    <div class="ts" style="margin-top:2px;max-width:340px">Every fare weighed against our own price history. Verdicts switch on once we've banked enough — no invented “was” prices, ever.</div></div>
+  <div class="tstat"><div class="tl">Routes tracked</div><b class="disp" id="statRoutes">—</b><div class="ts">prices refreshed four times a day</div></div>
+  <div class="tstat"><div class="tl">Airports covered</div><b class="disp">50+</b><div class="ts">UK & Ireland origins, worldwide</div></div>
+</div></div>
+
+<section>
+  <div class="wrap"><div class="feat">
+    <div class="txt"><div class="icon">✓</div><h3>Not sure it's<br>actually cheap?</h3>
+      <p>Every fare on the board will carry our verdict — GOOD PRICE, TYPICAL or WAIT — backed by real fare history. We do the working, you just book.</p>
+      <a href="how-it-works.html" class="btn">See how verdicts work</a></div>
+    <div class="pic"><div class="verdict-demo"><div class="vv">● GOOD PRICE — book now</div><div class="pl">£38</div><div class="pn">lowest in 90 days · normally £120</div></div></div>
+  </div></div>
+</section>
+
+<section id="edge" style="padding-top:0">
+  <div class="wrap"><div class="edge">
+    <div class="kicker">The edge nobody else has</div><h3>We found it cheaper — and we prove it.</h3>
+    <p class="sub">Our engine prices every airport in your catchment and every clever two-leg route, then only tells you when it genuinely wins — with the honest catch attached.</p>
+    <div class="edge-rows">
+      <div class="er"><span><span class="lead2">Catchment</span> · you searched Liverpool → Venice</span><span class="amt">£153</span></div>
+      <div class="er"><span><span class="lead2">→ £89 from Manchester</span>, 58 minutes away</span><span class="amt">£89 <small>save £64</small></span></div>
+      <div class="er"><span><span class="lead2">Reposition</span> · Manchester → New York, direct</span><span class="amt">£346</span></div>
+      <div class="er"><span><span class="lead2">→ MAN→Dublin £31 + Dublin→JFK £198</span><span class="flag">self-transfer: missed connection unprotected · bags recheck · check ESTA</span></span><span class="amt">£229 <small>save £117</small></span></div>
+    </div>
+  </div></div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap"><h2 class="faq-h disp">Booking flights with The Flight Lounge</h2>
+    <details open><summary>How does The Flight Lounge work?</summary><p>We continuously track fares from your home airports, build a median price for every route, and surface the genuine drops. Each fare lands on your board with a plain verdict — GOOD PRICE, TYPICAL or WAIT — so you know it's actually cheap before you click. You book direct with the airline; we never touch your payment.</p></details>
+    <details><summary>Why don't the verdicts show yet?</summary><p>Because we refuse to call a price “good” off a thin sample. We're banking fare history now — once a route has enough, its verdict switches on automatically. Until then the prices are real and live; we just won't pretend to judge them yet.</p></details>
+    <details><summary>Do you sell the flights?</summary><p>No — and that's deliberate. We point you to the airline or a trusted booking site and you pay them directly, so there's no markup and no mystery. We're a deal-finding club, not a seller.</p></details>
+    <p style="margin-top:22px"><a href="how-it-works.html" class="btn ink">Read the full how-it-works →</a></p>
+  </div>
+</section>
+
+<div id="ftr"></div>
+<script src="assets/tfl.js"></script>
+<script>
+  renderChrome("index.html");
+  function paint(){
+    var top = DEALS.slice().sort(function(a,b){return pctOff(b)-pctOff(a)}).slice(0,7);
+    renderBoard(top, document.getElementById("boardEl"));
+    document.getElementById("statRoutes").textContent = DEALS.length;
+  }
+  paint();
+  loadLiveDeals().then(function(meta){ if(meta){ liveBanner(meta); paint(); } });
+
+  var fromEl=document.getElementById("from"), toEl=document.getElementById("to");
+  attachAC(fromEl, document.getElementById("acFrom"));
+  attachAC(toEl, document.getElementById("acTo"));
+  document.getElementById("swap").onclick=function(){var a=fromEl.value,ac=fromEl.dataset.code;fromEl.value=toEl.value;fromEl.dataset.code=toEl.dataset.code||"";toEl.value=a;toEl.dataset.code=ac||"";};
+  document.getElementById("chkDirect").onclick=function(){this.classList.toggle("on")};
+  document.getElementById("chkNearby").onclick=function(){this.classList.toggle("on")};
+  function runSearch(){
+    var from=codeOf(fromEl)||"LON";
+    var to=toEl.value.trim()?codeOf(toEl):"ANY";
+    var nearby=document.getElementById("chkNearby").classList.contains("on");
+    var direct=document.getElementById("chkDirect").classList.contains("on");
+    var res=searchDeals(from,to,nearby);
+    if(direct) res=res.filter(function(d){return d.dir});
+    document.getElementById("boardTitle").textContent=(to==="ANY")?("Cheapest from "+(CITY[from]||from)):((CITY[from]||from)+" → "+(CITY[to]||to));
+    renderBoard(res, document.getElementById("boardEl"));
+    document.getElementById("board").scrollIntoView({behavior:"smooth"});
+  }
+  document.getElementById("searchBtn").onclick=runSearch;
+  toEl.addEventListener("keydown",function(e){if(e.key==="Enter")runSearch()});
+</script>
+</body>
+</html>

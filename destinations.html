@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Destinations — The Flight Lounge</title>
+<meta name="description" content="The cheapest live fare to every destination on the board, each with the airline.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tfl.css">
+</head>
+<body>
+<div id="hdr"></div>
+<section class="phero"><div class="wrap">
+  <div class="crumb"><a href="index.html">Home</a> · Destinations</div>
+  <div class="kicker">Where to?</div><h1>Pick a place. We'll price it.</h1>
+  <p>The cheapest live fare to every destination on the board — with the airline, so you know exactly who you're flying.</p>
+</div></section>
+<div class="wrap" style="padding:26px 0 60px"><div id="livebanner"></div><div class="dgrid" id="dgrid"></div></div>
+<div id="ftr"></div>
+<script src="assets/tfl.js"></script>
+<script>
+  renderChrome("destinations.html");
+  function paint(){
+    var byDest={}; DEALS.forEach(function(d){ if(!byDest[d.t]||d.price<byDest[d.t].price) byDest[d.t]=d; });
+    var cards=Object.keys(byDest).map(function(k){return byDest[k];}).sort(function(a,b){return pctOff(b)-pctOff(a);});
+    document.getElementById("dgrid").innerHTML=cards.map(function(d){
+      var ap=AIRPORTS.find(function(x){return x.c===d.t})||{city:d.t,ctry:""};var v=verdict(d);
+      return '<div class="dcard"><div class="dtop"><div><div class="dcity">'+(ap.city||d.t)+'</div><div class="dctry">'+(ap.ctry||"")+'</div></div><span class="dcode">'+d.t+'</span></div>'
+        +'<div class="dbot">'+logoImg(d.al)+'<div class="dmeta"><div class="dair">'+(airlineName(d.al)||"&nbsp;")+'</div><div class="dfrom">from '+(CITY[d.f]||d.f)+' · '+d.win+'</div></div>'
+        +'<div class="dprice"><div class="pv">£'+d.price+'</div><span class="dv '+v.cls+'">'+v.txt+'</span></div></div></div>';
+    }).join("");
+  }
+  paint();
+  loadLiveDeals().then(function(meta){ if(meta){ liveBanner(meta); paint(); } });
+</script>
+</body>
+</html>

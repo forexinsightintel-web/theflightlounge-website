@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Deals board — The Flight Lounge</title>
+<meta name="description" content="Every live fare on the board, each weighed against our own fare history.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tfl.css">
+</head>
+<body>
+<div id="hdr"></div>
+<section class="phero"><div class="wrap">
+  <div class="crumb"><a href="index.html">Home</a> · Deals board</div>
+  <div class="kicker">Live board</div><h1>Every fare, now boarding.</h1>
+  <p>The full board — each fare weighed against our own price history, with the honest verdict attached the moment there's enough history to call it.</p>
+</div></section>
+<div class="wrap" style="padding-top:26px">
+  <div id="livebanner"></div>
+  <div class="filters" id="filtOrigin">
+    <span class="filt on" data-o="all">All origins</span><span class="filt" data-o="london">London</span>
+    <span class="filt" data-o="nw">Manchester / NW</span><span class="filt" data-o="scot">Scotland</span>
+    <span class="filt" data-o="mid">Midlands</span><span class="filt" data-o="sw">South West</span>
+  </div>
+  <div class="filters" id="filtVerdict" style="margin-bottom:22px">
+    <span class="filt on" data-v="all">All fares</span><span class="filt" data-v="steal">Steals only</span>
+    <span class="filt" data-v="good">Good price+</span><span class="filt" data-v="direct">Direct only</span>
+  </div>
+</div>
+<div class="boardsec" style="padding-top:0"><div class="wrap">
+  <div class="board" id="boardEl"></div>
+  <p style="color:var(--muted);font-size:13px;margin:16px 2px 60px">Prices at last check, per person, incl. taxes. We link you to the airline or a trusted booking site — we don't sell flights. Verdicts appear once a route has enough fare history.</p>
+</div></div>
+<div id="ftr"></div>
+<script src="assets/tfl.js"></script>
+<script>
+  renderChrome("deals.html");
+  var oFilter="all", vFilter="all";
+  function apply(){
+    var list=DEALS.slice().sort(function(a,b){return pctOff(b)-pctOff(a)});
+    if(oFilter!=="all") list=list.filter(function(d){var ap=AIRPORTS.find(function(x){return x.c===d.f});var grp=ap?ap.grp:null;if(oFilter==="london")return d.f==="LON"||grp==="london";return grp===oFilter;});
+    if(vFilter==="steal") list=list.filter(function(d){return verdict(d).txt==="STEAL"});
+    else if(vFilter==="good") list=list.filter(function(d){var t=verdict(d).txt;return t==="STEAL"||t==="GOOD PRICE"});
+    else if(vFilter==="direct") list=list.filter(function(d){return d.dir});
+    renderBoard(list, document.getElementById("boardEl"));
+  }
+  document.getElementById("filtOrigin").onclick=function(e){var f=e.target.closest(".filt");if(!f)return;this.querySelectorAll(".filt").forEach(function(x){x.classList.remove("on")});f.classList.add("on");oFilter=f.dataset.o;apply();};
+  document.getElementById("filtVerdict").onclick=function(e){var f=e.target.closest(".filt");if(!f)return;this.querySelectorAll(".filt").forEach(function(x){x.classList.remove("on")});f.classList.add("on");vFilter=f.dataset.v;apply();};
+  apply();
+  loadLiveDeals().then(function(meta){ if(meta){ liveBanner(meta); apply(); } });
+</script>
+</body>
+</html>
