@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-07-22T10:28:21Z",
+ "generated_utc": "2026-07-22T10:52:27Z",
  "currency": "gbp",
  "reposition": [
   {
@@ -40,11 +40,22 @@
    "dest": "NYC",
    "month": "2026-08",
    "hub": "DUB",
-   "direct": 438.0,
+   "direct": 449.0,
    "total": 368.0,
-   "saving": 70.0,
+   "saving": 81.0,
    "leg1": 36.0,
    "leg2": 332.0
+  },
+  {
+   "home": "LON",
+   "dest": "JFK",
+   "month": "2026-08",
+   "hub": "DUB",
+   "direct": 449.0,
+   "total": 379.0,
+   "saving": 70.0,
+   "leg1": 36.0,
+   "leg2": 343.0
   },
   {
    "home": "LON",
@@ -59,14 +70,14 @@
   },
   {
    "home": "LON",
-   "dest": "JFK",
-   "month": "2026-08",
+   "dest": "NYC",
+   "month": "2026-09",
    "hub": "DUB",
-   "direct": 438.0,
-   "total": 379.0,
+   "direct": 398.0,
+   "total": 339.0,
    "saving": 59.0,
    "leg1": 36.0,
-   "leg2": 343.0
+   "leg2": 303.0
   },
   {
    "home": "LON",
@@ -78,17 +89,6 @@
    "saving": 48.0,
    "leg1": 36.0,
    "leg2": 541.0
-  },
-  {
-   "home": "LON",
-   "dest": "NYC",
-   "month": "2026-09",
-   "hub": "DUB",
-   "direct": 386.5,
-   "total": 338.5,
-   "saving": 48.0,
-   "leg1": 36.0,
-   "leg2": 302.5
   },
   {
    "home": "LON",
@@ -124,6 +124,17 @@
    "leg2": 184.0
   },
   {
+   "home": "LON",
+   "dest": "SJO",
+   "month": "2026-07",
+   "hub": "DUB",
+   "direct": null,
+   "total": 869.0,
+   "saving": null,
+   "leg1": 97.0,
+   "leg2": 772.0
+  },
+  {
    "home": "MAN",
    "dest": "ALC",
    "month": "2026-07",
@@ -144,17 +155,6 @@
    "saving": null,
    "leg1": 89.0,
    "leg2": 200.0
-  },
-  {
-   "home": "MAN",
-   "dest": "BJV",
-   "month": "2026-07",
-   "hub": "DUB",
-   "direct": null,
-   "total": 405.0,
-   "saving": null,
-   "leg1": 89.0,
-   "leg2": 316.0
   }
  ],
  "catchment": [
@@ -173,8 +173,8 @@
    "month": "2026-09",
    "alt": "MAN",
    "home_price": 300.0,
-   "alt_price": 164.0,
-   "saving": 136.0
+   "alt_price": 174.0,
+   "saving": 126.0
   },
   {
    "home": "GLA",
@@ -191,8 +191,8 @@
    "month": "2026-07",
    "alt": "MAN",
    "home_price": 516.0,
-   "alt_price": 420.5,
-   "saving": 95.5
+   "alt_price": 426.0,
+   "saving": 90.0
   },
   {
    "home": "MAN",
