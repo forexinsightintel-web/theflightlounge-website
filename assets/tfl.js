@@ -452,14 +452,14 @@ function renderResults(data, el, from, to, date){
       else vd='<span class="vd t">TYPICAL</span>';
     }
     return '<a class="lrow" href="'+book+'" target="_blank" rel="sponsored noopener nofollow">'
-      +'<div class="lr-air">'+logoImg(f.airline)+'<span class="lr-airtxt"><b>'+(airlineName(f.airline)||f.airlineName)+'</b><small>'+stops+' · '+dur+'</small></span></div>'
-      +'<div class="lr-time">'+dep+'<span class="lr-arw">→</span>'+arr+'</div>'
+      +'<div class="lr-air">'+logoImg(f.airline)+'<span class="lr-airtxt"><b>'+airlineName(f.airline)+'</b><small>'+stops+(dur?' · '+dur:'')+'</small></span></div>'
+      +'<div class="lr-time">'+(dep?'<small>departs</small>'+dep:'<small>time TBC</small>')+'</div>'
       +'<div class="lr-price"><span class="lr-pr">£'+f.price+'</span>'+vd+'</div>'
       +'<div class="lr-book">Book ›</div>'
       +'</a>';
   }).join("");
   el.innerHTML = head + ctxLine + '<div class="lrows">'+rows+'</div>'
-    +'<p class="afx" style="padding:14px 2px 0">Live fares via Amadeus. The Book button hands off to finish your booking — some links are affiliate links, at no extra cost to you. <a href="affiliate-disclosure.html">How this works</a>.</p>';
+    +'<p class="afx" style="padding:14px 2px 0">Live fares, cheapest first. The Book button hands off to finish your booking — some links are affiliate links, at no extra cost to you. <a href="affiliate-disclosure.html">How this works</a>.</p>';
   return true;
 }
 
