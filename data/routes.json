@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-07-23T05:41:14Z",
+ "generated_utc": "2026-07-23T10:52:23Z",
  "currency": "gbp",
  "reposition": [
   {
@@ -19,9 +19,9 @@
    "month": "2026-08",
    "hub": "MIL",
    "direct": 908.0,
-   "total": 621.0,
-   "saving": 287.0,
-   "leg1": 82.0,
+   "total": 622.0,
+   "saving": 286.0,
+   "leg1": 83.0,
    "leg2": 539.0
   },
   {
@@ -30,9 +30,9 @@
    "month": "2026-08",
    "hub": "MIL",
    "direct": 987.0,
-   "total": 720.0,
-   "saving": 267.0,
-   "leg1": 82.0,
+   "total": 721.0,
+   "saving": 266.0,
+   "leg1": 83.0,
    "leg2": 638.0
   },
   {
@@ -52,9 +52,9 @@
    "month": "2026-08",
    "hub": "MIL",
    "direct": 890.0,
-   "total": 657.0,
-   "saving": 233.0,
-   "leg1": 118.0,
+   "total": 651.0,
+   "saving": 239.0,
+   "leg1": 112.0,
    "leg2": 539.0
   },
   {
@@ -118,10 +118,10 @@
    "month": "2026-08",
    "hub": "DUB",
    "direct": 815.0,
-   "total": 646.0,
-   "saving": 169.0,
+   "total": 646.5,
+   "saving": 168.5,
    "leg1": 36.0,
-   "leg2": 610.0
+   "leg2": 610.5
   },
   {
    "home": "LON",
