@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-07-25T05:31:35Z",
+ "generated_utc": "2026-07-25T10:16:17Z",
  "currency": "gbp",
  "reposition": [
   {
@@ -41,9 +41,9 @@
    "month": "2026-08",
    "hub": "MIL",
    "direct": 966.0,
-   "total": 677.0,
-   "saving": 289.0,
-   "leg1": 48.0,
+   "total": 678.0,
+   "saving": 288.0,
+   "leg1": 49.0,
    "leg2": 629.0
   },
   {
@@ -150,9 +150,9 @@
    "dest": "SCL",
    "month": "2026-07",
    "hub": "MIL",
-   "direct": 1351.5,
+   "direct": 1351.0,
    "total": 1151.0,
-   "saving": 200.5,
+   "saving": 200.0,
    "leg1": 85.0,
    "leg2": 1066.0
   }
