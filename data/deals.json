@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-07-27T06:13:21Z",
+ "generated_utc": "2026-07-27T11:58:46Z",
  "currency": "gbp",
  "history_building": true,
  "collection_days": 8,
@@ -148,7 +148,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 66,
+   "n": 69,
    "low": 29,
    "high": 37,
    "hist": [
@@ -173,7 +173,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 66,
+   "n": 69,
    "low": 29,
    "high": 36,
    "hist": [
@@ -198,7 +198,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 60,
+   "n": 62,
    "low": 30,
    "high": 34,
    "hist": [
@@ -223,7 +223,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 66,
+   "n": 69,
    "low": 30,
    "high": 41,
    "hist": [
@@ -286,13 +286,13 @@
    "t": "DUB",
    "al": "FR",
    "price": 32,
-   "median": 35,
+   "median": 34,
    "win": "Sep 2026",
    "month": "2026-09",
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 51,
+   "n": 54,
    "low": 32,
    "high": 42,
    "hist": [
@@ -317,7 +317,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 10,
+   "n": 11,
    "low": 32,
    "high": 32,
    "hist": [
@@ -408,7 +408,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 66,
+   "n": 69,
    "low": 33,
    "high": 49,
    "hist": [
@@ -457,7 +457,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 52,
+   "n": 55,
    "low": 34,
    "high": 66,
    "hist": [
@@ -482,7 +482,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 24,
+   "n": 26,
    "low": 34,
    "high": 36,
    "hist": [
@@ -507,7 +507,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 17,
+   "n": 18,
    "low": 34,
    "high": 106,
    "hist": [
@@ -576,9 +576,9 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 42,
+   "n": 44,
    "low": 36,
-   "high": 90,
+   "high": 91,
    "hist": [
     36,
     36,
@@ -601,9 +601,9 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 0,
+   "n": 3,
    "low": 36,
-   "high": 89,
+   "high": 36,
    "hist": [
     89,
     89,
@@ -625,7 +625,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 60,
+   "n": 63,
    "low": 36,
    "high": 37,
    "hist": [
@@ -672,7 +672,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 66,
+   "n": 69,
    "low": 37,
    "high": 71,
    "hist": [
@@ -763,7 +763,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 61,
+   "n": 64,
    "low": 39,
    "high": 80,
    "hist": [
@@ -788,7 +788,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 66,
+   "n": 69,
    "low": 39,
    "high": 54,
    "hist": [
@@ -813,7 +813,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 60,
+   "n": 63,
    "low": 39,
    "high": 102,
    "hist": [
@@ -854,13 +854,13 @@
    "t": "ARN",
    "al": "FR",
    "price": 40,
-   "median": 66,
+   "median": 56,
    "win": "Sep 2026",
    "month": "2026-09",
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 43,
+   "n": 46,
    "low": 40,
    "high": 67,
    "hist": [
@@ -885,7 +885,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 66,
+   "n": 69,
    "low": 40,
    "high": 65,
    "hist": [
@@ -900,6 +900,31 @@
    ]
   },
   {
+   "f": "LON",
+   "t": "OSL",
+   "al": "RK",
+   "price": 41,
+   "median": 68,
+   "win": "Sep 2026",
+   "month": "2026-09",
+   "dir": true,
+   "status": "hold",
+   "verdict": "TRACKING",
+   "n": 19,
+   "low": 41,
+   "high": 68,
+   "hist": [
+    49,
+    68,
+    68,
+    68,
+    68,
+    68,
+    124,
+    41
+   ]
+  },
+  {
    "f": "MAN",
    "t": "PMI",
    "al": "U2",
@@ -910,7 +935,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 32,
+   "n": 34,
    "low": 41,
    "high": 77,
    "hist": [
@@ -935,7 +960,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 7,
+   "n": 8,
    "low": 41,
    "high": 41,
    "hist": [
@@ -1043,7 +1068,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 66,
+   "n": 69,
    "low": 47,
    "high": 98,
    "hist": [
@@ -1068,7 +1093,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 61,
+   "n": 63,
    "low": 47,
    "high": 96,
    "hist": [
@@ -1093,7 +1118,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 66,
+   "n": 69,
    "low": 47,
    "high": 122,
    "hist": [
@@ -1118,7 +1143,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 19,
+   "n": 20,
    "low": 47,
    "high": 49,
    "hist": [
@@ -1253,7 +1278,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 66,
+   "n": 69,
    "low": 49,
    "high": 110,
    "hist": [
@@ -1268,31 +1293,6 @@
    ]
   },
   {
-   "f": "LON",
-   "t": "OSL",
-   "al": "RK",
-   "price": 49,
-   "median": 124,
-   "win": "Aug 2026",
-   "month": "2026-08",
-   "dir": true,
-   "status": "hold",
-   "verdict": "TRACKING",
-   "n": 52,
-   "low": 49,
-   "high": 154,
-   "hist": [
-    49,
-    68,
-    68,
-    68,
-    68,
-    68,
-    124,
-    124
-   ]
-  },
-  {
    "f": "MAN",
    "t": "ALC",
    "al": "FR",
@@ -1303,7 +1303,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 44,
+   "n": 46,
    "low": 49,
    "high": 88,
    "hist": [
@@ -1353,7 +1353,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 53,
+   "n": 54,
    "low": 51,
    "high": 92,
    "hist": [
@@ -1400,7 +1400,7 @@
    "dir": true,
    "status": "hold",
    "verdict": "TRACKING",
-   "n": 64,
+   "n": 67,
    "low": 52,
    "high": 63,
    "hist": [
