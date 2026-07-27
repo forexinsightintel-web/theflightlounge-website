@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-07-27T16:49:34Z",
+ "generated_utc": "2026-07-27T21:48:48Z",
  "currency": "gbp",
  "reposition": [
   {
@@ -8,9 +8,9 @@
    "month": "2026-08",
    "hub": "DUB",
    "direct": 1197.0,
-   "total": 676.0,
-   "saving": 521.0,
-   "leg1": 97.0,
+   "total": 678.0,
+   "saving": 519.0,
+   "leg1": 99.0,
    "leg2": 579.0
   },
   {
@@ -18,9 +18,9 @@
    "dest": "LIM",
    "month": "2026-08",
    "hub": "MIL",
-   "direct": 1165.0,
+   "direct": 1204.5,
    "total": 786.0,
-   "saving": 379.0,
+   "saving": 418.5,
    "leg1": 157.0,
    "leg2": 629.0
   },
@@ -34,6 +34,28 @@
    "saving": 349.0,
    "leg1": 81.0,
    "leg2": 629.0
+  },
+  {
+   "home": "OSL",
+   "dest": "TYO",
+   "month": "2026-08",
+   "hub": "MIL",
+   "direct": 935.0,
+   "total": 622.0,
+   "saving": 313.0,
+   "leg1": 81.0,
+   "leg2": 541.0
+  },
+  {
+   "home": "KEF",
+   "dest": "MLE",
+   "month": "2026-08",
+   "hub": "IST",
+   "direct": 1177.0,
+   "total": 869.0,
+   "saving": 308.0,
+   "leg1": 406.0,
+   "leg2": 463.0
   },
   {
    "home": "KEF",
@@ -91,26 +113,26 @@
    "leg2": 541.0
   },
   {
-   "home": "MIL",
-   "dest": "LIM",
-   "month": "2026-07",
-   "hub": "IST",
-   "direct": 1453.0,
-   "total": 1181.0,
-   "saving": 272.0,
-   "leg1": 187.0,
-   "leg2": 994.0
-  },
-  {
    "home": "GLA",
    "dest": "GRU",
    "month": "2026-08",
    "hub": "IST",
-   "direct": 1267.0,
-   "total": 997.5,
-   "saving": 269.5,
-   "leg1": 252.0,
-   "leg2": 745.5
+   "direct": 1285.5,
+   "total": 1023.0,
+   "saving": 262.5,
+   "leg1": 278.0,
+   "leg2": 745.0
+  },
+  {
+   "home": "MIL",
+   "dest": "EZE",
+   "month": "2026-08",
+   "hub": "IST",
+   "direct": 1253.5,
+   "total": 991.0,
+   "saving": 262.5,
+   "leg1": 130.0,
+   "leg2": 861.0
   },
   {
    "home": "LON",
@@ -124,40 +146,27 @@
    "leg2": 576.0
   },
   {
-   "home": "DUB",
-   "dest": "TYO",
-   "month": "2026-08",
-   "hub": "MIL",
-   "direct": 890.0,
-   "total": 650.0,
-   "saving": 240.0,
-   "leg1": 109.0,
-   "leg2": 541.0
-  },
-  {
-   "home": "MIL",
-   "dest": "EZE",
-   "month": "2026-08",
-   "hub": "IST",
-   "direct": 1232.0,
-   "total": 994.0,
-   "saving": 238.0,
-   "leg1": 130.0,
-   "leg2": 864.0
-  },
-  {
-   "home": "MAN",
-   "dest": "NBO",
+   "home": "OSL",
+   "dest": "SIN",
    "month": "2026-09",
-   "hub": "AMS",
-   "direct": 746.0,
-   "total": 513.0,
-   "saving": 233.0,
-   "leg1": 104.0,
-   "leg2": 409.0
+   "hub": "MIL",
+   "direct": 740.0,
+   "total": 492.0,
+   "saving": 248.0,
+   "leg1": 84.0,
+   "leg2": 408.0
   }
  ],
  "catchment": [
+  {
+   "home": "EDI",
+   "dest": "PFO",
+   "month": "2026-08",
+   "alt": "GLA",
+   "home_price": 317.0,
+   "alt_price": 203.0,
+   "saving": 114.0
+  },
   {
    "home": "LPL",
    "dest": "IST",
@@ -204,6 +213,15 @@
    "saving": 89.5
   },
   {
+   "home": "GLA",
+   "dest": "IST",
+   "month": "2026-08",
+   "alt": "EDI",
+   "home_price": 278.0,
+   "alt_price": 193.0,
+   "saving": 85.0
+  },
+  {
    "home": "MAN",
    "dest": "AMS",
    "month": "2026-07",
@@ -229,15 +247,6 @@
    "home_price": 259.0,
    "alt_price": 192.0,
    "saving": 67.0
-  },
-  {
-   "home": "GLA",
-   "dest": "IST",
-   "month": "2026-08",
-   "alt": "EDI",
-   "home_price": 252.0,
-   "alt_price": 193.0,
-   "saving": 59.0
   },
   {
    "home": "GLA",
@@ -274,15 +283,6 @@
    "home_price": 791.0,
    "alt_price": 744.0,
    "saving": 47.0
-  },
-  {
-   "home": "EDI",
-   "dest": "IST",
-   "month": "2026-07",
-   "alt": "GLA",
-   "home_price": 253.0,
-   "alt_price": 216.0,
-   "saving": 37.0
   }
  ],
  "count": 28
