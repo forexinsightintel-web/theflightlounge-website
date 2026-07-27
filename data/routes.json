@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-07-26T21:40:44Z",
+ "generated_utc": "2026-07-27T06:13:21Z",
  "currency": "gbp",
  "reposition": [
   {
@@ -58,17 +58,6 @@
    "leg2": 569.0
   },
   {
-   "home": "LON",
-   "dest": "LIM",
-   "month": "2026-08",
-   "hub": "MIL",
-   "direct": 966.0,
-   "total": 678.0,
-   "saving": 288.0,
-   "leg1": 49.0,
-   "leg2": 629.0
-  },
-  {
    "home": "MAN",
    "dest": "TYO",
    "month": "2026-08",
@@ -78,6 +67,17 @@
    "saving": 283.0,
    "leg1": 84.0,
    "leg2": 541.0
+  },
+  {
+   "home": "LON",
+   "dest": "LIM",
+   "month": "2026-08",
+   "hub": "MIL",
+   "direct": 966.0,
+   "total": 684.0,
+   "saving": 282.0,
+   "leg1": 55.0,
+   "leg2": 629.0
   },
   {
    "home": "BHX",
@@ -113,6 +113,17 @@
    "leg2": 745.5
   },
   {
+   "home": "LON",
+   "dest": "JNB",
+   "month": "2026-08",
+   "hub": "DUB",
+   "direct": 871.0,
+   "total": 612.0,
+   "saving": 259.0,
+   "leg1": 36.0,
+   "leg2": 576.0
+  },
+  {
    "home": "DUB",
    "dest": "TYO",
    "month": "2026-08",
@@ -144,17 +155,6 @@
    "saving": 233.0,
    "leg1": 104.0,
    "leg2": 409.0
-  },
-  {
-   "home": "AMS",
-   "dest": "SEA",
-   "month": "2026-08",
-   "hub": "IST",
-   "direct": 1037.0,
-   "total": 806.0,
-   "saving": 231.0,
-   "leg1": 147.0,
-   "leg2": 659.0
   }
  ],
  "catchment": [
