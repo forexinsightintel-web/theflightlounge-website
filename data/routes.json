@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-07-28T05:34:29Z",
+ "generated_utc": "2026-07-28T11:02:45Z",
  "currency": "gbp",
  "reposition": [
   {
@@ -107,9 +107,9 @@
    "month": "2026-08",
    "hub": "MIL",
    "direct": 957.0,
-   "total": 678.0,
-   "saving": 279.0,
-   "leg1": 137.0,
+   "total": 678.5,
+   "saving": 278.5,
+   "leg1": 137.5,
    "leg2": 541.0
   },
   {
